@@ -1,17 +1,23 @@
 var React = require('react');
+var Nav = require('Nav');
 
-
-var Main = (props) => {
-  return (
-    <div>
-        <div>
-          <div>
-            <p>main go here</p>
-            {props.children}
-          </div>
+var Main = React.createClass({
+  render: function () {
+    return (
+      <div className="off-canvas-wrapper">
+        <div className="off-canvas position-left reveal-for-large" id="offCanvas" data-off-canvas>
+          <Nav/>
         </div>
-    </div>
-  )
-};
+        <div className="off-canvas-content" >
+          <p>main go here</p>
+          {this.props.children}
+        </div>
+      </div>
+    );
+  },
+  componentDidMount: function () {
+    var elem = new Foundation.OffCanvas($('#offCanvas'), false);
+  }
+});
 
 module.exports = Main;
