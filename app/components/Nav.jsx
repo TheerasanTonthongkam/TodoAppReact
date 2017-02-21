@@ -17,7 +17,7 @@ var Nav = React.createClass({
           <li>
             <Link to="/communication" activeClassName="active">
               <span className="icon-erm-icon-55-message"/>
-              Communication
+              Communication module
               <span className="right icon-erm-icon-16-arrowright"/>
             </Link>
           </li>
