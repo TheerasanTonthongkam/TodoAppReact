@@ -8,8 +8,7 @@ var Main = React.createClass({
         <div className="off-canvas position-left reveal-for-large" id="offCanvas" data-off-canvas>
           <Nav/>
         </div>
-        <div className="off-canvas-content" >
-          <p>main go here</p>
+        <div className="off-canvas-content content-wrapper" >
           {this.props.children}
         </div>
       </div>

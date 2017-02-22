@@ -1,0 +1,29 @@
+table {
+  border-spacing: 0;
+  font-size: 14px;
+  tbody {
+    color: $table-text-color;
+    tr {
+      background: $solid-white;
+      box-shadow: 0px -1px 0px 0px rgba(236, 238, 239, 1);
+      &:hover {
+        background: $table-hover-bg-color;
+      }
+    }
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+}
+
+thead {
+  line-height: 42px;
+  background: $table-header-bg-color;
+  color: $table-text-color;
+  tr {
+    background: inherit;
+  }
+}

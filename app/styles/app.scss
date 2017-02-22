@@ -1,61 +1,14 @@
-@import 'font';
-@import 'color';
+@import "font";
+@import "color";
 
 
 #app {
-  .off-canvas {
-    background: $off-canvas-bg;
+  @import "right-nav";
+  @import "table";
+  
+  .content-wrapper {
+    padding: 30px;
   }
 
-  .main-logo {
-    display: block;
-    margin: 30px auto;
-  }
-
-  ul.menu {
-    list-style: none;
-
-    li {
-      display: block;
-      width: 100%;
-    }
-
-    a {
-      color: $menu-idle-color;
-      padding: 0 0 0 30px;
-      height: 46px;
-      line-height: 46px;
-      position: relative;
-
-      &:hover {
-        color: $menu-hover-color;
-      }
-
-      [class^="icon-"], [class*=" icon-"] {
-        color: $menu-icon-idle-color;
-        font-size: 18px;
-        padding-top: 14px;
-        padding-right: 10px;
-      }
-
-      &.active {
-        background: $menu-active-bg;
-        [class^="icon-"], [class*=" icon-"] {
-          color: $menu-idle-color;
-          padding-top: 14px;
-          padding-right: 10px;
-        }
-
-        &:hover {
-          color: $menu-idle-color;
-        }
-      }
-
-      .right {
-        position: absolute;
-        right: 10px;
-        margin: 0;
-      }
-    }
-  }
+  
 }
