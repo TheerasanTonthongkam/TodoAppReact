@@ -3,6 +3,7 @@ var Nav = require('Nav');
 var TopBar = require('TopBar');
 var Banner = require('Banner');
 var BodyContent = require('BodyContent');
+var MainForm = require('MainForm');
 
 var Main = React.createClass({
   render: function () {
@@ -11,17 +12,8 @@ var Main = React.createClass({
         <TopBar/>
         <Banner/>
         <BodyContent/>
+        <MainForm/>
       </div>
-
-      // <div className="off-canvas-wrapper">
-      //   <div className="off-canvas position-right reveal-for-large" id="offCanvas" data-off-canvas>
-      //     <Nav/>
-      //   </div>
-      //   <div className="off-canvas-content content-wrapper" >
-      //     <Topbar/>
-      //     {this.props.children}
-      //   </div>
-      // </div>
     );
   },
   componentDidMount: function () {

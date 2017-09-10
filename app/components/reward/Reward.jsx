@@ -1,6 +1,6 @@
 var React = require('react');
 
-var MainForm = React.createClass({
+var Reward = React.createClass({
     render: function() {
         return (
             <div id="main-form">
@@ -12,4 +12,4 @@ Samsung Galaxy Note 8 และรางวัลอีกมากมาย ร
     }
 });
 
-module.exports = MainForm;
+module.exports = Reward;
