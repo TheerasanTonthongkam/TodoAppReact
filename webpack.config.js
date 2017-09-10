@@ -25,7 +25,8 @@ module.exports = {
             'node_modules',
             './app/components',
             './app/api',
-            './app/components/employee'
+            './app/components/employee',
+            './app/components/nav'
         ],
         alias: {
             applicationStyles: 'app/styles/app.scss'

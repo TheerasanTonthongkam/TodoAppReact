@@ -3,12 +3,12 @@
 
 
 #app {
-  @import "right-nav";
   @import "table";
-  
+  @import "topbar";
+
   .content-wrapper {
     padding: 30px;
   }
 
-  
+
 }

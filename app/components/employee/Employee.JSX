@@ -12,7 +12,7 @@ var Employee = React.createClass({
 
         return (
             <div>
-                <h3>Employees</h3>
+                <h3>xxxxx</h3>
                 <EmployeeList employees={employees}/>
             </div>
         );
