@@ -30,6 +30,7 @@ module.exports = {
             './app/components/banner',
             './app/components/body',
             './app/components/form',
+            './app/components/reward',
             './app/api'
         ],
         alias: {

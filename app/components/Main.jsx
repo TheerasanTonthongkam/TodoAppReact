@@ -4,6 +4,7 @@ var TopBar = require('TopBar');
 var Banner = require('Banner');
 var BodyContent = require('BodyContent');
 var MainForm = require('MainForm');
+var Reward = require('Reward');
 
 var Main = React.createClass({
   render: function () {
@@ -13,6 +14,7 @@ var Main = React.createClass({
         <Banner/>
         <BodyContent/>
         <MainForm/>
+        <Reward/>
       </div>
     );
   },
