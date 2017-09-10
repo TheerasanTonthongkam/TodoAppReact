@@ -1,11 +1,18 @@
 var React = require('react');
 var Nav = require('Nav');
 var TopBar = require('TopBar');
+var Banner = require('Banner');
+var BodyContent = require('BodyContent');
 
 var Main = React.createClass({
   render: function () {
     return (
-      <TopBar/>
+      <div>
+        <TopBar/>
+        <Banner/>
+        <BodyContent/>
+      </div>
+
       // <div className="off-canvas-wrapper">
       //   <div className="off-canvas position-right reveal-for-large" id="offCanvas" data-off-canvas>
       //     <Nav/>

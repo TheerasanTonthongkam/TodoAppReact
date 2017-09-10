@@ -14,7 +14,7 @@ var TopBar = React.createClass({
           <li><a href="#">เคล็ดลับสุขภาพดี</a></li>
           <li><a href="#"><img src="../img/mail.png"/></a></li>
         </ul>
-        <ul id="phone-menu" className="menu align-right show-for-small dropdown" data-dropdown-menu>
+        <ul id="phone-menu" className="menu align-right hide-for-large dropdown" data-dropdown-menu>
           <li>
             <a href="#">
               <img src="../img/ic_menu.png"/>
