@@ -1,0 +1,22 @@
+#runing-number {
+  span {
+    margin: 10px;
+    font-size: 175px;
+    color: #fff;
+    font-family: 'AIA-head' !important;
+    background: #88092d;
+    width: 100px;
+    height: 155px;
+    line-height: 130px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $break-not-small) {
+      width: 85px;
+      height: 125px;
+      font-size: 144px;
+      line-height: 110px;
+    }
+  }
+}
