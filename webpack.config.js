@@ -25,7 +25,19 @@ module.exports = {
             'node_modules',
             './app/components',
             './app/api',
-            './app/components/employee'
+            './app/components/employee',
+            './app/components/nav',
+            './app/components/banner',
+            './app/components/body',
+            './app/components/form',
+            './app/components/reward',
+            './app/components/blog',
+            './app/components/footer',
+            './app/components/livewall',
+            './app/components/video',
+            './app/components/whatsyourwhy',
+            './app/components/item',
+            './app/api'
         ],
         alias: {
             applicationStyles: 'app/styles/app.scss'

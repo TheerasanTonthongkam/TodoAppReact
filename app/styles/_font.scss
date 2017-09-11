@@ -9,6 +9,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AIA-head';
+  src:  url('/fonts/AIA-Heading Regular_0.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AIA-body';
+  src:  url('/fonts/AIA-Body Regular_0.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ERM-icon' !important;

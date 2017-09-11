@@ -1,0 +1,63 @@
+#main-menu-container {
+  font-family: 'AIA-head' !important;
+  background: $topbar-bg-color;
+  height: 88px;
+  padding: 0 55px;
+  position: relative;
+
+  @media screen and (max-width: $break-small) {
+    height: 44px;
+    padding: 0;
+    margin: 0;
+  }
+
+  #logo {
+    position: absolute;
+    left: 55px;
+    z-index: 1;
+    top: 20px;
+    height: 48px;
+    @media screen and (max-width: $break-small) {
+      left: 10px;
+      top: 9px;
+      height: 28px;
+    }
+  }
+
+  .menu {
+    a, a.sub-menu {
+      color: $topbar-menu-color;
+      padding: 0 10px;
+      height: 88px;
+      line-height: 88px;
+      position: relative;
+      font-size: 36.35px;
+
+      @media screen and (max-width: $break-small) {
+        color: #ffffff;
+        padding: 0 10px;
+        position: relative;
+        height: 44px;
+        line-height: 44px;
+      }
+
+      &:hover {
+        color: #88092d;
+      }
+
+      &:after {
+        display: none !important;
+      }
+    }
+
+    a.sub-menu {
+      color: $topbar-bg-color;
+      height: 90px;
+      line-height: 90px;
+    }
+  }
+}
+
+#phone-menu {
+  display: flow-root;
+}

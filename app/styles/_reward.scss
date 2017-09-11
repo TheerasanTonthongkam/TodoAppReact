@@ -1,0 +1,142 @@
+#reward-wrapper {
+  @media screen and (max-width: $break-small) {
+    max-width: 95%;
+    margin: auto;
+  }
+}
+
+#reward {
+  padding-top: 40px;
+  max-width: 1100px;
+  margin: auto;
+
+
+
+  @media screen and (max-width: $break-small) {
+    max-width: 85%;
+    img {
+      display: block;
+      padding-left: 15px;
+    }
+
+    .big img {
+      margin: auto;
+    }
+  }
+
+  h2 {
+    font-family: 'AIA-head' !important;
+    color: $topbar-bg-color;
+    font-size: 60px;
+    text-align: center;
+
+    @media screen and (max-width: $break-small) {
+      font-size: 36px;
+    }
+  }
+
+  p {
+    font-family: 'AIA-body' !important;
+    color: $topbar-bg-color;
+    line-height: 1.275;
+    font-size: 24px;
+    width: 580px;
+    text-align: center;
+    margin: auto;
+    @media screen and (max-width: $break-small) {
+      font-size: 40px;
+      width: 70%;
+    }
+  }
+
+  .reward-card {
+    font-family: 'AIA-head' !important;
+    padding: 25px 0;
+
+
+    @media screen and (max-width: $break-small) {
+      margin: auto;
+      img {
+        height: 110px;
+        width: auto;
+      }
+    }
+
+    &.big {
+      margin: auto;
+      max-width: 375px;
+      img {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+      }
+
+
+      @media screen and (max-width: $break-small) {
+        width: 65%;
+      }
+
+      h3 {
+        font-size: 48px;
+        line-height: 0.8;
+        margin-top: 35px;
+        @media screen and (max-width: $break-small) {
+          font-size: 30px;
+        }
+      }
+
+    }
+
+    h3 {
+      margin: 0px;
+      font-family: 'AIA-head' !important;
+      color: $font-color;
+      font-size: 36px;
+      line-height: 0.8;
+      margin-top: 10px;
+      @media screen and (max-width: $break-small) {
+        font-size: 24px;
+      }
+    }
+
+    h4 {
+      margin: 0px;
+      font-family: 'AIA-head' !important;
+      color: $font-color;
+      font-size: 28px;
+      line-height: 0.8;
+      @media screen and (max-width: $break-small) {
+        font-size: 18px;
+      }
+    }
+
+    &.big {
+      & > div {
+        padding: 0 15px;
+        width: 220px;
+        background: $topbar-bg-color;
+        color: #fff;
+        font-size: 36px;
+        line-height: 1;
+        @media screen and (max-width: $break-small) {
+          font-size: 20px;
+          width: 138px;
+        }
+      }
+    }
+    & > div {
+      margin-top: 10px;
+      padding: 0 15px;
+      width: 165px;
+      background: $topbar-bg-color;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      @media screen and (max-width: $break-small) {
+        font-size:18px;
+        width: 110px;
+      }
+    }
+  }
+}

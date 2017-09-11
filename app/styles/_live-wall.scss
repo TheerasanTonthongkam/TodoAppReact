@@ -1,0 +1,210 @@
+#live-wall, #add-reason-form {
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  background: $topbar-bg-color;
+  color: #fff;
+  font-family: 'AIA-head' !important;
+
+  @media screen and (max-width: $break-small) {
+    margin-top: 35px;
+  }
+
+  .w-40 {
+    width: 40%;
+    float: left;
+    @media screen and (max-width: $break-small) {
+      width: 50%;
+    }
+  }
+
+  .w-20 {
+    width: 20%;
+    float: left;
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+    }
+  }
+
+  .gone_3 {
+    margin-left: 10%;
+    @media screen and (max-width: $break-small) {
+      margin-left: 0;
+    }
+  }
+
+  .gone_2 {
+    margin-left: 30%;
+    @media screen and (max-width: $break-small) {
+      margin-left: 25%;
+    }
+  }
+
+  .live-wall-card {
+    width: 100%;
+    border: 1px solid #fff;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #d01648;
+
+    @media screen and (max-width: $break-small) {
+      height: 110px;
+    }
+
+    img {
+      width: 55%;
+      height: auto;
+      margin: 15px auto;
+
+      @media screen and (max-width: $break-small) {
+        margin: 0 auto;
+      }
+    }
+
+    &.big {
+      height: 440px;
+
+      @media screen and (max-width: $break-small) {
+        height: 220px;
+      }
+
+      .text {
+        height: 98px;
+        @media screen and (max-width: $break-small) {
+          height: 49px;
+        }
+      }
+      .img {
+        height: 244px;
+        @media screen and (max-width: $break-small) {
+          height: 122px;
+        }
+
+        &:after {
+          top: 0;
+          margin-top: 347px;
+          @media screen and (max-width: $break-small) {
+            margin-top: 176px;
+          }
+        }
+      }
+
+      img {
+        margin: 30px auto;
+        @media screen and (max-width: $break-small) {
+          margin: 15px auto;
+        }
+      }
+
+      .reason {
+        font-size: 25px;
+        @media screen and (max-width: $break-small) {
+          font-size: 14px;
+        }
+      }
+
+      .why {
+        font-size: 58px;
+        @media screen and (max-width: $break-small) {
+          font-size: 28px;
+        }
+      }
+
+    }
+
+    .reason {
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 15px;
+      line-height: 1;
+      text-overflow: ellipsis;
+      margin: 5px 10px 0 10px;
+      @media screen and (max-width: $break-small) {
+        font-size: 7px;
+      }
+    }
+
+    .why {
+      overflow:hidden;
+      white-space:nowrap;
+      font-size: 30px;
+      line-height: 1;
+      text-overflow: ellipsis;
+      margin: 0 10px;
+      @media screen and (max-width: $break-small) {
+        font-size: 15px;
+      }
+    }
+
+    .text {
+      height: 49px;
+      text-align: center;
+      @media screen and (max-width: $break-small) {
+        height: 22px;
+      }
+    }
+
+    .img {
+      background: rgba(255, 255, 255, 1);
+      height: 122px;
+      overflow: hidden;
+      &:before {
+        content: '';
+        width: 20%;
+        height: 0px;
+        position: absolute;
+        margin-top: -8px;
+        border-left: 500px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 8px solid white;
+      }
+
+      &:after {
+        content: '';
+        width: 20%;
+        top: 176px;
+        right: 0;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid transparent;
+        border-right: 500px solid transparent;
+        border-top: 8px solid #fff;
+          @media screen and (max-width: $break-small) {
+            top: 0;
+            margin-top: 87px;
+          }
+      }
+
+      @media screen and (max-width: $break-small) {
+        height: 60px;
+      }
+    }
+
+    @media screen and (max-width: $break-small) {
+
+    }
+  }
+
+  .break {
+      clear: both;
+  }
+
+  .wrapper {
+    max-width: 1110px;
+    margin: auto;
+    @media screen and (max-width: $break-small) {
+      width: 95%;
+    }
+  }
+
+  h2 {
+    font-family: 'AIA-head' !important;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    @media screen and (max-width: $break-small) {
+      font-size: 36px;
+    }
+  }
+}

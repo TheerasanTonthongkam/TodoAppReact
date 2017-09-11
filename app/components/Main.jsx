@@ -1,21 +1,35 @@
 var React = require('react');
 var Nav = require('Nav');
+var TopBar = require('TopBar');
+var Banner = require('Banner');
+var BodyContent = require('BodyContent');
+var MainForm = require('MainForm');
+var Reward = require('Reward');
+var LiveWall = require('LiveWall');
+var Video = require('Video');
+var WhatsYourWhy = require('WhatsYourWhy');
+var Blog = require('Blog');
+var Footer = require('Footer');
 
 var Main = React.createClass({
   render: function () {
     return (
-      <div className="off-canvas-wrapper">
-        <div className="off-canvas position-left reveal-for-large" id="offCanvas" data-off-canvas>
-          <Nav/>
-        </div>
-        <div className="off-canvas-content content-wrapper" >
-          {this.props.children}
-        </div>
+      <div>
+        <TopBar/>
+        <Banner/>
+        <BodyContent/>
+        <MainForm/>
+        <Reward/>
+        <LiveWall/>
+        <Video/>
+        <WhatsYourWhy/>
+        <Blog/>
+        <Footer/>
       </div>
     );
   },
   componentDidMount: function () {
-    var elem = new Foundation.OffCanvas($('#offCanvas'), false);
+    //var elem = new Foundation.OffCanvas($('#offCanvas'), false);
   }
 });
 
