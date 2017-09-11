@@ -31,6 +31,12 @@ module.exports = {
             './app/components/body',
             './app/components/form',
             './app/components/reward',
+            './app/components/blog',
+            './app/components/footer',
+            './app/components/livewall',
+            './app/components/video',
+            './app/components/whatsyourwhy',
+            './app/components/item',
             './app/api'
         ],
         alias: {

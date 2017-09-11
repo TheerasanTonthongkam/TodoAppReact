@@ -47,7 +47,6 @@ var RunninngNumber = React.createClass({
           }
 
           var renderNumber = () => {
-            console.log("renderNumber");
               return numbers.map((n) => {
                   return (
                       <span key={n.id}>{n.val}</span>

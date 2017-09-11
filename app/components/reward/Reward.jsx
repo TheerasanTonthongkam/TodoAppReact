@@ -15,7 +15,7 @@ var Reward = React.createClass({
                     </div>
                     <div className="medium-12 large-6 columns">
                       <div className="grid-x">
-                        <div className="small-6 columns">
+                        <div className="small-7 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize2.png"/>
                             <h3>Samsung Galaxy Note 8</h3>
@@ -23,7 +23,7 @@ var Reward = React.createClass({
                             <div>2 รางวัล</div>
                           </div>
                         </div>
-                        <div className="small-6 columns">
+                        <div className="small-5 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize3.png"/>
                             <h3>Garmin Fenix 5X</h3>
@@ -33,7 +33,7 @@ var Reward = React.createClass({
                         </div>
                       </div>
                       <div className="grid-x">
-                        <div className="small-6 columns">
+                        <div className="small-7 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize4.png"/>
                             <h3>Gift Voucher จาก<br/>Adidas</h3>
@@ -41,7 +41,7 @@ var Reward = React.createClass({
                             <div>5 รางวัล</div>
                           </div>
                         </div>
-                        <div className="small-6 columns">
+                        <div className="small-5 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize5.png"/>
                             <h3>Gift Voucher จาก Tops Supermarket</h3>
