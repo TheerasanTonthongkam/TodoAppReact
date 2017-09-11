@@ -123,8 +123,8 @@ var LiveWall = React.createClass({
                 </div>
               </div>
               <div className="break"></div>
+              <a href="#" className="button-line">ดู LIVE WALL ทั้งหมด</a>
             </div>
-            <a href="#" className="button-line">ดู LIVE WALL ทั้งหมด</a>
           </div>
       );
     }

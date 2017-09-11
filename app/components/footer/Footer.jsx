@@ -17,14 +17,14 @@ var Footer = React.createClass({
             <div className="grid-x grid-margin-x">
               <div className="small-12 large-2 cell">
                 <h2>CONTACT AIA GROUP</h2>
-                <a className="button-line" href="#">CLICK FOR DETAILS</a>
+                <a href="http://www.aia.com/en/about-aia/contact-us.html" className="button-line" href="#">CLICK FOR DETAILS</a>
               </div>
               <div className="small-12 large-3 large-offset-1 cell">
                 <h2>VISIT OUR MARKET SITES</h2>
                 <div className="grid-x">
                   <div className="small-12 large-10 cell">
                     <select name="ddlFooterCountry" id="aia1714185019" onChange={this.handleChange} >
-                      <option value="none" selected="">-- Please select --</option>
+                      <option value="none" defaultValue>-- Please select --</option>
                       <option value="http://www.aia.com.au/">Australia</option>
                       <option value="http://www.aia.com.cn/" >China</option>
                       <option value="http://www.aia.com.kh" >Cambodia</option>

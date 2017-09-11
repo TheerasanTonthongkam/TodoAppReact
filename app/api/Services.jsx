@@ -6,6 +6,7 @@ const LIVE_WALL_COUNT = '/campaign/count';
 const FAMOUS_BLOG = '/content/blog/famous';
 const BLOG = '/content/blog';
 const LIVE_WALL = '/campaign?page=1&size=14'
+const REGISTER = '/account';
 
 module.exports = {
   getLiveWallCount: function () {
@@ -48,5 +49,16 @@ module.exports = {
     }, function (err) {
       throw new Error('Unable to fetch weather for that location');
     });
+  },
+
+  registerWithEmail: function(data) {
+    var requestUrl = `${END_POINT}${REGISTER}`;
+
+    return axios.post(requestUrl, data).then(function(res) {
+      console.log("RESIGER");
+      console.log(res);
+      return res.data
+    })
+
   }
 }

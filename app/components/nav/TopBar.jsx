@@ -12,7 +12,7 @@ var TopBar = React.createClass({
           <li><a href="#reward">รางวัล</a></li>
           <li><a href="#live-wall">ดู Live Wall</a></li>
           <li><a href="#video">เคล็ดลับสุขภาพดี</a></li>
-          <li><a href="#"><img src="../img/mail.png"/></a></li>
+          <li><a target="_blank" href="http://www.aia.com/en/about-aia/contact-us.html" ><img src="../img/mail.png"/></a></li>
         </ul>
         <ul id="phone-menu" className="menu align-right hide-for-large dropdown" data-dropdown-menu>
           <li>

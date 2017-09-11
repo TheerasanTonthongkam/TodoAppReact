@@ -10,13 +10,15 @@ var MainForm = React.createClass({
               <p>ลุ้นรับหมวกพร้อมลายเซนต์จาก David Beckham, Samsung Galaxy Note 8 และรางวัลอีกมากมาย รวมมูลค่ากว่า 200,000 บาท</p>
 
               <div className="form-container grid-x margin-x">
-                <div className="small-12 large-6 small-order-1  large-order-3 cell">
+                <div className="small-12 large-5 small-order-1  large-order-3 cell">
                   <RegisterForm />
                 </div>
-                <div className="small-12 large-1 small-order-2 cell">
-
+                <div className="small-12 large-3 small-order-2 cell">
+                  <div className="red-line">
+                    <div className="or">หรือ</div>
+                  </div>
                 </div>
-                <div className="small-12 large-5 small-order-3 large-order-1 cell">
+                <div className="small-12 large-3 large-offset-1 small-order-3 large-order-1 cell">
                     <LoginForm />
                 </div>
               </div>

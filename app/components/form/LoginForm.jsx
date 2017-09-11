@@ -3,24 +3,23 @@ var React = require('react');
 var LoginForm = React.createClass({
     onFormSubmit: function(e) {
         e.preventDefault();
-        var city = this.refs.city.value;
+        var phone = this.refs.phone.value;
+        var email = this.refs.email.value;
 
-        if (city.length > 0) {
-          this.refs.city.value = '';
-          this.props.onSetCity(city);
-        }
+        console.log(`${phone} ${email}`);
     },
     render: function() {
         return (
             <div id="login-form">
               <h3>ล้อคอิน</h3>
 
-              <div className="grid-x margin-x">
-                <div className="small-12 large-6 cell">
-                  fb
+              <div className="note">หากคุณยังไม่ได้ลงทะเบียน สามารถลงทะเบียนผ่าน facebook or google ได้ที่ปุ่มด้านล่าง</div>
+              <div className="grid-x grid-margin-x">
+                <div className="small-6 cell">
+                  <a href="#" className="button-facebook">Connect with Facebook</a>
                 </div>
-                <div className="small-12 large-6 cell">
-                  gg
+                <div className="small-6 cell">
+                  <a href="#" className="button-google">Connect with Google+</a>
                 </div>
               </div>
 
@@ -29,6 +28,7 @@ var LoginForm = React.createClass({
                 <input type="text" ref="phone"/>
                 <label>อีเมล์</label>
                 <input type="email" ref="email"/>
+                <button type="submit" className="button-line expanded">ล้อคอิน</button>
               </form>
             </div>
         );

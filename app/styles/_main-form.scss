@@ -60,4 +60,89 @@
       font-size: 20px;
     }
   }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  #register-form {
+    form {
+      margin-top: 40px;
+
+      @media screen and (max-width: $break-small) {
+        margin: 0px;
+      }
+    }
+
+    input.check {
+      margin-bottom: 0;
+    }
+
+    .term {
+      color: #000;
+      font-family: 'AIA-body' !important;
+      font-size: 18px;
+      display: inline;
+    }
+
+    .button-line {
+      margin-top: 12px;
+      background: $topbar-bg-color;
+      color: #fff;
+      max-width: 100%;
+    }
+  }
+
+  .red-line {
+    height: 100%;
+    width: 1px;
+    margin: auto;
+    background: $topbar-bg-color;
+    position: relative;
+
+    @media screen and (max-width: $break-small) {
+      height: 1px;
+      width: 90%;
+      margin: 20px auto 40px auto;
+    }
+
+  }
+
+  .or {
+    background: #fff;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    line-height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    color: $topbar-bg-color;
+    font-family: 'AIA-body' !important;
+    font-size: 28px;
+    font-weight: bold;
+
+    @media screen and (max-width: $break-small) {
+      font-size: 20px;
+      height: 30px;
+      width: 40px;
+      line-height: 30px;
+      margin-left: -20px;
+      margin-top: -15px;
+    }
+  }
+
+  .note {
+    font-family: 'AIA-body' !important;
+    color: #909090;
+    text-align: left;
+    font-size: 14px;
+    @media screen and (max-width: $break-small) {
+      text-align: center;
+      width: 50%;
+      margin: auto;
+    }
+  }
 }

@@ -3,7 +3,7 @@ var React = require('react');
 var Reward = React.createClass({
     render: function() {
         return (
-          <div>
+          <div id="reward-wrapper">
             <div id="reward">
                 <h2>ของรางวัล</h2>
                   <div className="grid-x">
