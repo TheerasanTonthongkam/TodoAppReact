@@ -46,12 +46,12 @@
         height: 244px;
 
         &:after {
-          top: 342px;
+          top: 347px;
         }
       }
 
       img {
-        margin-top: 35px;
+        margin-top: 30px;
       }
 
       .reason {
@@ -65,12 +65,12 @@
     }
 
     .reason {
-      overflow:hidden;
-      white-space:nowrap;
+      overflow: hidden;
+      white-space: nowrap;
       font-size: 15px;
-      line-height: 1.4;
+      line-height: 1;
       text-overflow: ellipsis;
-      margin: 0 10px;
+      margin: 5px 10px 0 10px;
     }
 
     .why {
@@ -105,7 +105,7 @@
       &:after {
         content: '';
         width: 20%;
-        top: 171px;
+        top: 176px;
         right: 0;
         height: 0px;
         position: absolute;
