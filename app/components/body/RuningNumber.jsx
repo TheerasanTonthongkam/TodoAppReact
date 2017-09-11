@@ -15,13 +15,30 @@ var RunninngNumber = React.createClass({
       count: 0
     };
   },
+  showRuning: function(start, stop) {
+    console.log(start);
+    console.log(stop);
+    var that = this;
+    this.setState({
+      count: start,
+      isLoading: false
+    });
+
+    if (start < stop) {
+      start = start + 1;
+      setTimeout(function() {
+        {that.showRuning(start, stop)}
+      }, 100);
+    }
+  },
   getCount: function() {
     var that = this;
     services.getLiveWallCount().then(function (c) {
-      that.setState({
-        count: c,
-        isLoading: false
-      });
+      var start = 0;
+      if (c > 10) {
+        start = c - 10;
+      }
+      {that.showRuning(start, c)}
     });
   },
   render: function () {
