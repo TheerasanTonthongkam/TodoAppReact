@@ -8,6 +8,7 @@
     border: none;
     @media screen and (max-width: $break-small) {
       height: inherit;
+      margin-top: 40px;
     }
   }
   @media screen and (max-width: $break-small) {

@@ -4,10 +4,10 @@
   margin: auto;
 
   @media screen and (max-width: $break-small) {
-    max-width: 740px;
+    max-width: 85%;
     img {
       display: block;
-      margin-left: 15px;
+      padding-left: 15px;
     }
 
     .big img {
@@ -22,7 +22,7 @@
     text-align: center;
 
     @media screen and (max-width: $break-small) {
-      font-size: 72px;
+      font-size: 36px;
     }
   }
 
@@ -42,22 +42,30 @@
 
   .reward-card {
     font-family: 'AIA-head' !important;
-
     padding: 25px 0;
 
 
     @media screen and (max-width: $break-small) {
-      width: 330px;
       margin: auto;
+      img {
+        height: 110px;
+        width: auto;
+      }
     }
 
     &.big {
       margin: auto;
-      width: 380px;
+      max-width: 375px;
+      img {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+      }
 
 
       @media screen and (max-width: $break-small) {
-        width: 440px;
+        width: 65%;
       }
 
       h3 {
@@ -65,7 +73,7 @@
         line-height: 0.8;
         margin-top: 35px;
         @media screen and (max-width: $break-small) {
-          font-size: 60px;
+          font-size: 30px;
         }
       }
 
@@ -79,7 +87,7 @@
       line-height: 0.8;
       margin-top: 10px;
       @media screen and (max-width: $break-small) {
-        font-size: 48px;
+        font-size: 24px;
       }
     }
 
@@ -90,7 +98,7 @@
       font-size: 28px;
       line-height: 0.8;
       @media screen and (max-width: $break-small) {
-        font-size: 36px;
+        font-size: 18px;
       }
     }
 
@@ -103,7 +111,8 @@
         font-size: 36px;
         line-height: 1;
         @media screen and (max-width: $break-small) {
-          font-size: 40px;
+          font-size: 20px;
+          width: 138px;
         }
       }
     }
@@ -116,7 +125,8 @@
       font-size: 28px;
       line-height: 1;
       @media screen and (max-width: $break-small) {
-        font-size: 36px;
+        font-size:18px;
+        width: 110px;
       }
     }
   }

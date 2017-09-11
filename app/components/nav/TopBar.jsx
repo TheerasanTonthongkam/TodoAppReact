@@ -6,12 +6,12 @@ var TopBar = React.createClass({
     return (
       <div id="main-menu-container">
         <img id="logo" src="../img/logo_aia.png"/>
-        <ul className="menu align-right show-for-large">
-          <li><a href="#">เกี่ยวกับ#WhatsYourWhy</a></li>
-          <li><a href="#">ร่วมกิจกรรม</a></li>
-          <li><a href="#">รางวัล</a></li>
-          <li><a href="#">ดู Live Wall</a></li>
-          <li><a href="#">เคล็ดลับสุขภาพดี</a></li>
+        <ul id="desktop-menu" className="menu align-right show-for-large" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
+          <li><a href="#body-content">เกี่ยวกับ#WhatsYourWhy</a></li>
+          <li><a href="#main-form">ร่วมกิจกรรม</a></li>
+          <li><a href="#reward">รางวัล</a></li>
+          <li><a href="#live-wall">ดู Live Wall</a></li>
+          <li><a href="#video">เคล็ดลับสุขภาพดี</a></li>
           <li><a href="#"><img src="../img/mail.png"/></a></li>
         </ul>
         <ul id="phone-menu" className="menu align-right hide-for-large dropdown" data-dropdown-menu>
@@ -34,6 +34,7 @@ var TopBar = React.createClass({
   },
   componentDidMount: function () {
     var elem = new Foundation.DropdownMenu($('#phone-menu'), null);
+    var elem = new Foundation.SmoothScroll($('#desktop-menu'), null);
   }
 });
 

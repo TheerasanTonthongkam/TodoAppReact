@@ -1,10 +1,14 @@
 #live-wall {
   margin-top: 50px;
   padding-top: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 1px;
   background: $topbar-bg-color;
   color: #fff;
   font-family: 'AIA-head' !important;
+
+  @media screen and (max-width: $break-small) {
+    margin-top: 35px;
+  }
 
   .w-40 {
     width: 40%;
@@ -44,36 +48,67 @@
     position: relative;
     background: #d01648;
 
+    @media screen and (max-width: $break-small) {
+      height: 110px;
+    }
+
     img {
       width: 55%;
       height: auto;
-      margin: auto;
-      margin-top: 15px;
+      margin: 15px auto;
+
+      @media screen and (max-width: $break-small) {
+        margin: 0 auto;
+      }
     }
 
     &.big {
       height: 440px;
+
+      @media screen and (max-width: $break-small) {
+        height: 220px;
+      }
+
       .text {
         height: 98px;
+        @media screen and (max-width: $break-small) {
+          height: 49px;
+        }
       }
       .img {
         height: 244px;
+        @media screen and (max-width: $break-small) {
+          height: 122px;
+        }
 
         &:after {
-          top: 347px;
+          top: 0;
+          margin-top: 347px;
+          @media screen and (max-width: $break-small) {
+            margin-top: 176px;
+          }
         }
       }
 
       img {
-        margin-top: 30px;
+        margin: 30px auto;
+        @media screen and (max-width: $break-small) {
+          margin: 15px auto;
+        }
       }
 
       .reason {
         font-size: 25px;
+        @media screen and (max-width: $break-small) {
+          font-size: 14px;
+        }
       }
 
       .why {
         font-size: 58px;
+        @media screen and (max-width: $break-small) {
+          font-size: 28px;
+        }
       }
 
     }
@@ -85,6 +120,9 @@
       line-height: 1;
       text-overflow: ellipsis;
       margin: 5px 10px 0 10px;
+      @media screen and (max-width: $break-small) {
+        font-size: 7px;
+      }
     }
 
     .why {
@@ -94,11 +132,17 @@
       line-height: 1;
       text-overflow: ellipsis;
       margin: 0 10px;
+      @media screen and (max-width: $break-small) {
+        font-size: 15px;
+      }
     }
 
     .text {
       height: 49px;
       text-align: center;
+      @media screen and (max-width: $break-small) {
+        height: 22px;
+      }
     }
 
     .img {
@@ -126,14 +170,24 @@
         border-left: 0px solid transparent;
         border-right: 500px solid transparent;
         border-top: 8px solid #fff;
+          @media screen and (max-width: $break-small) {
+            top: 0;
+            margin-top: 87px;
+          }
+      }
+
+      @media screen and (max-width: $break-small) {
+        height: 60px;
       }
     }
 
+    @media screen and (max-width: $break-small) {
+
+    }
   }
 
   .break {
       clear: both;
-      margin-bottom: 15px;
   }
 
   .wrapper {
@@ -150,7 +204,7 @@
     color: #fff;
     text-align: center;
     @media screen and (max-width: $break-small) {
-      font-size: 72px;
+      font-size: 36px;
     }
   }
 

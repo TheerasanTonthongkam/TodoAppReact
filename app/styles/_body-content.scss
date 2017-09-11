@@ -24,6 +24,9 @@
     }
     .map-title {
       margin-top: 30px;
+      @media screen and (max-width: $break-small) {
+        width: 70%;
+      }
     }
 
     .all-title {
@@ -51,16 +54,20 @@
       margin-top: 15px;
       color: #fff;
       font-family: 'AIA-head' !important;
+      @media screen and (max-width: $break-small) {
+        font-size: 24px;
+        margin-top: 10px;
+      }
     }
 
     .leading-text {
-      font-size: 65px;
       margin-top: 15px;
       color: #fff;
       font-family: 'AIA-head' !important;
       line-height: 1;
+      font-size: 32px;
       .text-big {
-        font-size: 90px;
+        font-size: 45px;
       }
 
       @media screen and (min-width: $break-not-small) {
@@ -80,47 +87,41 @@
       display: block;
       width: 95%;
       margin: 20px auto;
-      height: 80px;
-      line-height: 80px;
       background: #fff;
       font-family: 'AIA-head' !important;
-      font-size: 72px;
+      font-size: 36px;
+      height: 40px;
+      line-height: 40px;
       color: $topbar-bg-color;
 
       @media screen and (min-width: $break-not-small) {
-        font-size: 36px;
-        height: 40px;
-        line-height: 40px;
         width: 360px;
       }
     }
 
     .des-text {
-      padding: 60px 0;
+      padding: 0 0 45px 0;
       line-height: 1.275;
       color: #fff;
       display: block;
       width: 95%;
-      margin: 20px auto;
-      font-size: 50px;
+      margin: 35px auto;
+      font-size: 24px;
       font-family: 'AIA-body' !important;
       .text-big {
-        font-size: 60px;
+        font-size: 36px;
         font-family: 'AIA-body' !important;
         font-weight: bold;
       }
+
       @media screen and (min-width: $break-not-small) {
-        padding: 0;
         margin: 0;
         text-align: left;
         position: absolute;
         width: 660px;
         left: 47%;
         top: 875px;
-        font-size: 24px;
-        .text-big {
-          font-size: 36px;
-        }
+
       }
     }
   }

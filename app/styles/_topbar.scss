@@ -6,8 +6,9 @@
   position: relative;
 
   @media screen and (max-width: $break-small) {
-    height: 120px;
-    padding: 0 20px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
   }
 
   #logo {
@@ -17,8 +18,9 @@
     top: 20px;
     height: 48px;
     @media screen and (max-width: $break-small) {
-      left: 20px;
-      height: 78px;
+      left: 10px;
+      top: 9px;
+      height: 28px;
     }
   }
 
@@ -32,12 +34,15 @@
       font-size: 36.35px;
 
       @media screen and (max-width: $break-small) {
-        height: 120px;
-        line-height: 120px;
+        color: #ffffff;
+        padding: 0 10px;
+        position: relative;
+        height: 44px;
+        line-height: 44px;
       }
 
       &:hover {
-        opacity: 0.8;
+        color: #88092d;
       }
 
       &:after {
