@@ -65,7 +65,7 @@
     margin-bottom: 10px;
   }
 
-  #register-form {
+  #register-form, #add-reason-form {
     form {
       margin-top: 40px;
 
@@ -90,6 +90,13 @@
       background: $topbar-bg-color;
       color: #fff;
       max-width: 100%;
+
+      &.gray {
+        margin-bottom: 0px;
+        color: #555;
+        background-color: #e1e1e1;
+        border-color: #e1e1e1;
+      }
     }
   }
 

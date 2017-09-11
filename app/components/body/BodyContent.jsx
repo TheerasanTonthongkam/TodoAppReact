@@ -22,7 +22,7 @@ var BodyContent = React.createClass({
               <span className="text-big">คนไทย</span> ร่วมเป็นส่วนหนึ่งบน<br/>
                   AIA’s #WhatsYourWhy Live Wall แล้ว
 
-                  <a href="#" className="join-btn">ร่วมสนุกเลย</a>
+                  <a id="join-btn" href="#main-form" className="join-btn" data-smooth-scroll data-animation-easing="swing" data-threshold="0">ร่วมสนุกเลย</a>
             </span>
 
 
@@ -39,7 +39,7 @@ var BodyContent = React.createClass({
     );
   },
   componentDidMount: function () {
-
+    var elem = new Foundation.SmoothScroll($('#join-btn'), null);
   }
 });
 

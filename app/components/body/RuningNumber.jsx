@@ -16,8 +16,6 @@ var RunninngNumber = React.createClass({
     };
   },
   showRuning: function(start, stop) {
-    console.log(start);
-    console.log(stop);
     var that = this;
     this.setState({
       count: start,

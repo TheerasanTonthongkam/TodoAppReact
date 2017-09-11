@@ -1,4 +1,5 @@
 var React = require('react');
+var services = require('Services');
 
 var LoginForm = React.createClass({
     onFormSubmit: function(e) {
@@ -6,7 +7,18 @@ var LoginForm = React.createClass({
         var phone = this.refs.phone.value;
         var email = this.refs.email.value;
 
-        console.log(`${phone} ${email}`);
+        var data = {
+          phoneNo: phone,
+          email: email
+        }
+
+        var that = this;
+        services.login(data).then(function(data) {
+          console.log("Registered");
+          that.props.onGetUser(data);
+        }, function (e) {
+          alert('Unable to sign in');
+        });
     },
     render: function() {
         return (
@@ -25,9 +37,9 @@ var LoginForm = React.createClass({
 
               <form onSubmit={this.onFormSubmit}>
                 <label>เบอร์โทรศัพท์</label>
-                <input type="text" ref="phone"/>
+                <input type="text" ref="phone" required/>
                 <label>อีเมล์</label>
-                <input type="email" ref="email"/>
+                <input type="email" ref="email" required/>
                 <button type="submit" className="button-line expanded">ล้อคอิน</button>
               </form>
             </div>

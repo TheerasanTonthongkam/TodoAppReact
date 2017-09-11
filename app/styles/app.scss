@@ -15,6 +15,7 @@
   @import "whatsyourwhy";
   @import "live-wall";
   @import "footer";
+  @import "add-reason-form";
 
   .button-line {
     border: 1px solid $topbar-bg-color;
@@ -58,7 +59,7 @@
     padding-left: 48px;
     padding-top: 10px;
     padding-bottom: 10px;
-    max-width: 135px;
+    min-width: 135px;
 
     @media screen and (max-width: $break-small) {
       height: 35px;
@@ -78,5 +79,12 @@
 
   .content-wrapper {
     padding: 30px;
+  }
+
+  a, button {
+    cursor: pointer;
+    &:active {
+      opacity: 0.8 !important;
+    }
   }
 }
