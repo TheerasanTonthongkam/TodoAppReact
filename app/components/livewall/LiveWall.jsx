@@ -29,7 +29,15 @@ var LiveWall = React.createClass({
   render: function() {
     var {isLoading, data} = this.state;
 
+    var firstElemStyle;
 
+    if (data.length > 5 && data.length <= 10) {
+      firstElemStyle = 'gone_3'
+    }
+
+    if (data.length <= 5) {
+      firstElemStyle = 'gone_2'
+    }
 
     if (isLoading) {
       return (
@@ -56,8 +64,18 @@ var LiveWall = React.createClass({
               <LiveWallItem {...data[num]}/>
             </div>
           );
-        } else {
-          return (<span>empty</span>);
+        }
+      };
+
+      var renderItemC3_12 = (num) => {
+        console.log(num);
+        console.log(data[num]);
+        if (data[num] !== undefined) {
+          return (
+            <div className="small-3 large-12 cell">
+              <LiveWallItem {...data[num]}/>
+            </div>
+          );
         }
       };
 
@@ -65,26 +83,10 @@ var LiveWall = React.createClass({
           <div id="live-wall">
             <h2>LIVE WALL</h2>
             <div className="wrapper">
-              <div className="w-40">
+              <div className={'w-40 ' + firstElemStyle}>
 
                  {renderItemBig(0)}
 
-                <div className="grid-x">
-                  {renderItemC6(0)}
-
-                  {renderItemC6(1)}
-
-                  <div className="small-6 cell">
-                    <LiveWallItem/>
-                  </div>
-
-                  <div className="small-6 cell">
-                    <LiveWallItem/>
-                  </div>
-
-                </div>
-              </div>
-              <div className="w-40">
                 <div className="grid-x">
                   {renderItemC6(1)}
 
@@ -93,27 +95,31 @@ var LiveWall = React.createClass({
                   {renderItemC6(3)}
 
                   {renderItemC6(4)}
+
+                </div>
+              </div>
+              <div className="w-40">
+                <div className="grid-x">
+                  {renderItemC6(5)}
+
+                  {renderItemC6(6)}
+
+                  {renderItemC6(7)}
+
+                  {renderItemC6(8)}
                 </div>
 
-                <LiveWallItem css="big"/>
+                {renderItemBig(9)}
               </div>
               <div className="w-20">
                 <div className="grid-x">
-                  <div className="small-3 large-12 cell">
-                    <LiveWallItem/>
-                  </div>
+                  {renderItemC3_12(10)}
 
-                  <div className="small-3 large-12 cell">
-                    <LiveWallItem/>
-                  </div>
+                  {renderItemC3_12(11)}
 
-                  <div className="small-3 large-12 cell">
-                    <LiveWallItem/>
-                  </div>
+                  {renderItemC3_12(12)}
 
-                  <div className="small-3 large-12 cell">
-                    <LiveWallItem/>
-                  </div>
+                  {renderItemC3_12(13)}
                 </div>
               </div>
               <div className="break"></div>
