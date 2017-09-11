@@ -11,7 +11,33 @@
   @import "loading";
   @import "main-form";
   @import "reward";
+  @import "video";
   @import "whatsyourwhy";
+  @import "live-wall";
+  @import "footer";
+
+  .button-line {
+    margin-top: 30px;
+    border: 1px solid $topbar-bg-color;
+    background: #fff;
+    display: block;
+    width: 360px;
+    margin: 20px auto;
+    height: 50px;
+    line-height: 50px;
+    background: #fff;
+    font-family: 'AIA-head' !important;
+    font-size: 28px;
+    text-align: center;
+    color: $topbar-bg-color;
+
+    @media screen and (max-width: $break-small) {
+      font-size: 48px;
+      height: 70px;
+      line-height: 70px;
+      width: 95%;
+    }
+  }
 
   .content-wrapper {
     padding: 30px;

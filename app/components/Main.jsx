@@ -5,8 +5,11 @@ var Banner = require('Banner');
 var BodyContent = require('BodyContent');
 var MainForm = require('MainForm');
 var Reward = require('Reward');
+var LiveWall = require('LiveWall');
+var Video = require('Video');
 var WhatsYourWhy = require('WhatsYourWhy');
 var Blog = require('Blog');
+var Footer = require('Footer');
 
 var Main = React.createClass({
   render: function () {
@@ -17,8 +20,11 @@ var Main = React.createClass({
         <BodyContent/>
         <MainForm/>
         <Reward/>
+        <LiveWall/>
+        <Video/>
         <WhatsYourWhy/>
         <Blog/>
+        <Footer/>
       </div>
     );
   },

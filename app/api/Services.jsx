@@ -5,6 +5,7 @@ const END_POINT = 'http://104.198.185.202/api';
 const LIVE_WALL_COUNT = '/campaign/count';
 const FAMOUS_BLOG = '/content/blog/famous';
 const BLOG = '/content/blog';
+const LIVE_WALL = '/campaign?page=1&size=14'
 
 module.exports = {
   getLiveWallCount: function () {
@@ -31,6 +32,17 @@ module.exports = {
     var requestUrl = `${END_POINT}${FAMOUS_BLOG}`;
     return axios.get(requestUrl).then(function(res) {
       console.log("blog");
+      console.log(res);
+      return res.data
+    }, function (err) {
+      throw new Error('Unable to fetch weather for that location');
+    });
+  },
+
+  getLiveWall: function () {
+    var requestUrl = `${END_POINT}${LIVE_WALL}`;
+    return axios.get(requestUrl).then(function(res) {
+      console.log("LIVE_WALL");
       console.log(res);
       return res.data
     }, function (err) {

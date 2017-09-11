@@ -3,6 +3,7 @@ var React = require('react');
 var Reward = React.createClass({
     render: function() {
         return (
+          <div>
             <div id="reward">
                 <h2>ของรางวัล</h2>
                   <div className="grid-x">
@@ -52,6 +53,9 @@ var Reward = React.createClass({
                       </div>
                     </div>
                   </div>
+
+            </div>
+            <a href="#" className="button-line">วิธีร่วมกิจกรรม</a>
             </div>
         );
     }

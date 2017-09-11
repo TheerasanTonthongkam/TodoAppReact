@@ -1,0 +1,16 @@
+#video {
+  max-width: 915px;
+  margin: auto;
+
+  .responsive-embed iframe {
+    height: 550px !important;
+    margin-top: 80px;
+    border: none;
+    @media screen and (max-width: $break-small) {
+      height: inherit;
+    }
+  }
+  @media screen and (max-width: $break-small) {
+    width: 95%;
+  }
+}

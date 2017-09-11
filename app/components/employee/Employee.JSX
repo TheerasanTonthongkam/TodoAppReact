@@ -8,7 +8,7 @@ var Employee = React.createClass({
         return employeeService.getEmployees();
     },
     render: function() {
-        var {employees} = this.state;
+
 
         return (
             <div>

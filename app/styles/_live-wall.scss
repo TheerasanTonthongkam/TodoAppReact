@@ -1,0 +1,144 @@
+#live-wall {
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  background: $topbar-bg-color;
+  color: #fff;
+  font-family: 'AIA-head' !important;
+
+  .w-40 {
+    width: 40%;
+    float: left;
+    @media screen and (max-width: $break-small) {
+      width: 50%;
+    }
+  }
+
+  .w-20 {
+    width: 20%;
+    float: left;
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+    }
+  }
+
+  .live-wall-card {
+    width: 100%;
+    border: 1px solid #fff;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #d01648;
+
+    img {
+      width: 55%;
+      height: auto;
+      margin: auto;
+      margin-top: 15px;
+    }
+
+    &.big {
+      height: 440px;
+      .text {
+        height: 98px;
+      }
+      .img {
+        height: 244px;
+
+        &:after {
+          top: 342px;
+        }
+      }
+
+      img {
+        margin-top: 35px;
+      }
+
+      .reason {
+        font-size: 25px;
+      }
+
+      .why {
+        font-size: 58px;
+      }
+
+    }
+
+    .reason {
+      overflow:hidden;
+      white-space:nowrap;
+      font-size: 15px;
+      line-height: 1.4;
+      text-overflow: ellipsis;
+      margin: 0 10px;
+    }
+
+    .why {
+      overflow:hidden;
+      white-space:nowrap;
+      font-size: 30px;
+      line-height: 1;
+      text-overflow: ellipsis;
+      margin: 0 10px;
+    }
+
+    .text {
+      height: 49px;
+      text-align: center;
+    }
+
+    .img {
+      background: rgba(255, 255, 255, 0.7);
+      height: 122px;
+      overflow: hidden;
+      &:before {
+        content: '';
+        width: 20%;
+        height: 0px;
+        position: absolute;
+        margin-top: -8px;
+        border-left: 500px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 8px solid white;
+      }
+
+      &:after {
+        content: '';
+        width: 20%;
+        top: 171px;
+        right: 0;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid transparent;
+        border-right: 500px solid transparent;
+        border-top: 8px solid #fff;
+      }
+    }
+
+  }
+
+  .break {
+      clear: both;
+      margin-bottom: 15px;
+  }
+
+  .wrapper {
+    max-width: 1110px;
+    margin: auto;
+    @media screen and (max-width: $break-small) {
+      width: 95%;
+    }
+  }
+
+  h2 {
+    font-family: 'AIA-head' !important;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    @media screen and (max-width: $break-small) {
+      font-size: 72px;
+    }
+  }
+
+
+}
