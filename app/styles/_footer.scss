@@ -1,4 +1,96 @@
 #footer {
   background: #302f2c;
-  
+  font-family: 'AIA-body' !important;
+  color: #fff;
+  font-size: 20px;
+  padding-top: 30px;
+  @media screen and (max-width: $break-small) {
+    font-size: 40px;
+  }
+  & > .grid-x {
+    margin: auto;
+    max-width: 97%;
+    @media screen and (max-width: $break-small) {
+      max-width: 95%;
+    }
+  }
+
+  h2 {
+    font-size: 36px;
+    font-family: 'AIA-head' !important;
+    color: #b3b1a8;
+    margin: 0px;
+    @media screen and (max-width: $break-small) {
+      font-size: 60px;
+      margin-top: 20px;
+    }
+  }
+
+  .button-line {
+    width: 100%;
+    background: none;
+    color: #fff;
+    border-color: #fff;
+    margin-top: 10px;
+    line-height: 45px;
+
+    @media screen and (max-width: $break-small) {
+      line-height: 65px;
+    }
+  }
+
+  select {
+    margin-top: 10px;
+    height: 50px;
+    font-size: inherit;
+    line-height: 1;
+
+    @media screen and (max-width: $break-small) {
+      height: 70px;
+    }
+  }
+
+  .line {
+    width: 95%;
+    height: 1px;
+    background-color: #b3b1a8;
+    margin: 70px auto 30px auto;
+    opacity: 0.7;
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+      margin: 40px 0;
+    }
+  }
+
+  .link {
+    text-align: center;
+    .center {
+      margin: 0 10px;
+      @media screen and (max-width: $break-small) {
+        margin: 0 40px;
+      }
+    }
+
+    a {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      @media screen and (max-width: $break-small) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+  }
+
+  .copy-right {
+    opacity: 0.7;
+    text-align: center;
+    padding: 40px 0;
+    @media screen and (max-width: $break-small) {
+      padding: 100px 0;
+    }
+
+  }
+
 }
