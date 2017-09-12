@@ -4,7 +4,7 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var Communication = require('Communication');
 var Employee = require('Employee');
-var EmployeeDetail = require('EmployeeDetail');
+var LiveWallPage = require('LiveWallPage');
 
 // Load foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
@@ -15,13 +15,9 @@ require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route path="/" component={Main}>
-        <Route path="employee">
-            <IndexRoute component={Employee}/>
-            <Route path="*" component={EmployeeDetail}/>
-        </Route>
-
-      <Route path="communication" component={Communication}/>
+    <Route path="/">
+      <IndexRoute component={Main}/>
+      <Route path="livewall" component={LiveWallPage}/>
     </Route>
   </Router>,
   document.getElementById("app")

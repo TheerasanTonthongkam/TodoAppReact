@@ -1,13 +1,15 @@
 #live-wall, #add-reason-form {
-  margin-top: 50px;
+
   padding-top: 10px;
   padding-bottom: 1px;
   background: $topbar-bg-color;
   color: #fff;
   font-family: 'AIA-head' !important;
 
+  min-height: 1100px;
+
   @media screen and (max-width: $break-small) {
-    margin-top: 35px;
+      min-height: 700px;
   }
 
   .w-40 {
@@ -205,6 +207,15 @@
     text-align: center;
     @media screen and (max-width: $break-small) {
       font-size: 36px;
+    }
+  }
+
+  ul.pagination {
+    zoom: 2;
+    margin-top: 10px;
+
+    li.current {
+      background: rgba(0, 0, 0, 0.3);
     }
   }
 }

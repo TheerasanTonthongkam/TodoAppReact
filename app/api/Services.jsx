@@ -5,7 +5,7 @@ const END_POINT = 'http://104.198.185.202/api';
 const LIVE_WALL_COUNT = '/campaign/count';
 const FAMOUS_BLOG = '/content/blog/famous';
 const BLOG = '/content/blog';
-const LIVE_WALL = '/campaign?page=1&size=14'
+const LIVE_WALL = '/campaign?size=14&page='
 const REGISTER = '/account';
 const LOGIN = '/account/credential';
 const CAMPAIGN = '/campaign';
@@ -38,8 +38,8 @@ module.exports = {
     });
   },
 
-  getLiveWall: function () {
-    var requestUrl = `${END_POINT}${LIVE_WALL}`;
+  getLiveWall: function (page) {
+    var requestUrl = `${END_POINT}${LIVE_WALL}${page}`;
     return axios.get(requestUrl).then(function(res) {
       return res.data
     }, function (err) {
