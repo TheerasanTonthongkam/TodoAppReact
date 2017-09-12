@@ -31,18 +31,14 @@ var RegisterForm = React.createClass({
 
       var that = this;
 
-      services.registerWithEmail(data).then(function(data) {
-        console.log("Registered");
+      services.register(data).then(function(data) {
         that.props.onGetUser(data);
       }, function (e) {
         alert('Unable to sign in');
       });
 
-      console.log(`${phone} ${email} ${firstName} ${lastName}`);
   },
   render: function() {
-
-    console.log(this.props);
     return (
         <div id="register-form">
           <h3>ลงทะเบียน</h3>

@@ -47,8 +47,6 @@ var LiveWall = React.createClass({
         </div>
       )
     } else {
-
-      console.log(data);
       var renderItemBig = (num) => {
         if (data[num] !== undefined) {
           return (<LiveWallItem css="big" {...data[num]}/>);

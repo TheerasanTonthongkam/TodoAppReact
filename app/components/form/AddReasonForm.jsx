@@ -7,12 +7,12 @@ var FormData = require('form-data');
 var AddReasonForm = React.createClass({
   onFormSubmit: function(e) {
       e.preventDefault();
-
+      console.log(this.getCookie('userId'));
       let data = new FormData();
       data.append('file', this.state.file);
-      data.append('postId', 2);
-      data.append('reasonCode', "fds");
-      data.append('reasonPhrase', "this.state.reason");
+      data.append('postId', this.getCookie('userId'));
+      data.append('reasonCode', this.state.value);
+      data.append('reasonPhrase', this.state.reason);
 
 
       var that = this;
@@ -22,6 +22,20 @@ var AddReasonForm = React.createClass({
       }, function (e) {
         alert('Unable to Posted');
       });
+  },
+  getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
   },
   onImageChange(e) {
     e.preventDefault();
@@ -81,10 +95,7 @@ var AddReasonForm = React.createClass({
             </div>
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
-                <input type="text" value={3} name="postId" required/>
-
                 <div className="auto-complete">
-
                   <input type="text" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
                       items={[

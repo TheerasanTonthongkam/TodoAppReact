@@ -19,7 +19,6 @@ var Blog = React.createClass({
   getList: function() {
     var that = this;
     services.getBlog().then(function (data) {
-      console.log(data);
       that.setState({
         data: data,
         isLoading: false

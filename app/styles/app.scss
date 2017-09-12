@@ -43,13 +43,11 @@
 
   .button-facebook, .button-google  {
     display: block;
-    max-width: 360px;
     width: 1000px;
     margin: 10px auto 20px auto;
     height: 50px;
     line-height: 50px;
     font-size: 12px;
-    text-align: center;
     color: #fff;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -58,7 +56,6 @@
     text-align: start;
     padding-left: 48px;
     min-width: 135px;
-    display: table-cell;
     display: table-cell;
     vertical-align: middle;
 
@@ -76,6 +73,7 @@
   .button-google {
     background-color: #e14932;
     background-image: url('/img/ic_gg.png');
+    margin: 0;
   }
 
   .content-wrapper {

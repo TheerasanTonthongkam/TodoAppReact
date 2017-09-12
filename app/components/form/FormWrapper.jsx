@@ -5,25 +5,43 @@ var AddReasonForm = require('AddReasonForm');
 
 var FormWrapper = React.createClass({
   getInitialState: function() {
+    var that = this;
+    var id = -1;
+    if (that.getCookie("userId") !== undefined) {
+      id = that.getCookie("userId");
+    }
     return {
-      login: false,
-      user: undefined
+      login: (that.getCookie("userId") !== undefined),
+      id: id
     };
   },
+  getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+  },
   onGetUser: function(data) {
-    alert(data);
+    document.cookie = `userId=${data.id}`;
     this.setState({
       login: true,
-      user: data
     });
   },
   render: function() {
-    var {login, user} = this.state;
+    var {login, id} = this.state;
 
-    if (!(login && user != undefined)) {
+    if (login && id > 0) {
       return (
         <div>
-          <AddReasonForm {...user} />
+          <AddReasonForm userId={id} />
         </div>
       );
     } else {

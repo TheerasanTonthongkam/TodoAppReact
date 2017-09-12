@@ -23,8 +23,6 @@ module.exports = {
   getBlog: function () {
     var requestUrl = `${END_POINT}${BLOG}`;
     return axios.get(requestUrl).then(function(res) {
-      console.log("blog");
-      console.log(res);
       return res.data
     }, function (err) {
       throw new Error('Unable to fetch weather for that location');
@@ -34,8 +32,6 @@ module.exports = {
   getFamousBlog: function () {
     var requestUrl = `${END_POINT}${FAMOUS_BLOG}`;
     return axios.get(requestUrl).then(function(res) {
-      console.log("blog");
-      console.log(res);
       return res.data
     }, function (err) {
       throw new Error('Unable to fetch weather for that location');
@@ -45,19 +41,15 @@ module.exports = {
   getLiveWall: function () {
     var requestUrl = `${END_POINT}${LIVE_WALL}`;
     return axios.get(requestUrl).then(function(res) {
-      console.log("LIVE_WALL");
-      console.log(res);
       return res.data
     }, function (err) {
       throw new Error('Unable to fetch weather for that location');
     });
   },
 
-  registerWithEmail: function(data) {
+  register: function(data) {
     var requestUrl = `${END_POINT}${REGISTER}`;
     return axios.post(requestUrl, data).then(function(res) {
-      console.log("RESIGER");
-      console.log(res);
       return res.data
     }, function (err) {
       console.log(err);
@@ -68,8 +60,6 @@ module.exports = {
   login: function(data) {
     var requestUrl = `${END_POINT}${LOGIN}`;
     return axios.post(requestUrl, data).then(function(res) {
-      console.log("RESIGER");
-      console.log(res);
       return res.data
     }, function (err) {
       console.log(err);
@@ -79,23 +69,15 @@ module.exports = {
 
   postCampaign: function(formData) {
     var requestUrl = `${END_POINT}${CAMPAIGN}`;
-
     const config = {
         headers: {
             'content-type': 'multipart/form-data'
         }
     }
-
     return axios.post(requestUrl, formData, config).then(function(res) {
-      console.log("RESIGER");
-      console.log(res);
       return res.data
     }, function (err) {
-      console.log(err);
       throw new Error('Unable to fetch weather for that location');
     });
-
-
   }
-
 }
