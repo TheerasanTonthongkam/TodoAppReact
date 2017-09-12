@@ -23,10 +23,11 @@ var LoginForm = React.createClass({
     render: function() {
         return (
             <div id="login-form">
-              <h3>ล้อคอิน</h3>
+              <h3>ล็อคอิน</h3>
 
               <div className="note">หากคุณยังไม่ได้ลงทะเบียน สามารถลงทะเบียนผ่าน facebook or google ได้ที่ปุ่มด้านล่าง</div>
-              <div className="grid-x grid-margin-x">
+
+              <div style={{marginTop: '10px'}} className="grid-x grid-margin-x">
                 <div className="small-6 cell">
                   <a href="#" className="button-facebook">Connect with Facebook</a>
                 </div>
@@ -35,12 +36,12 @@ var LoginForm = React.createClass({
                 </div>
               </div>
 
-              <form onSubmit={this.onFormSubmit}>
+              <form style={{marginTop: '10px'}} onSubmit={this.onFormSubmit}>
                 <label>เบอร์โทรศัพท์</label>
                 <input type="text" ref="phone" required/>
                 <label>อีเมล์</label>
                 <input type="email" ref="email" required/>
-                <button type="submit" className="button-line expanded">ล้อคอิน</button>
+                <button type="submit" className="button-line expanded">ล็อคอิน</button>
               </form>
             </div>
         );

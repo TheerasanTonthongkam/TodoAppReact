@@ -48,7 +48,7 @@ var WhatsYourWhy = React.createClass({
 
         return (
           <div id="blog">
-              <h2>ทำ "อย่างไร" ให้สุขภาพดี</h2>
+              <h2>พบกับ #whatsyourwhy ของคนดัง</h2>
                 <div className="grid-x grid-margin-x">
                   {renderList()}
                 </div>

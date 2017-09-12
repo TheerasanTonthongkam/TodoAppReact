@@ -20,7 +20,7 @@ var FormWrapper = React.createClass({
   render: function() {
     var {login, user} = this.state;
 
-    if (login && user != undefined) {
+    if (!(login && user != undefined)) {
       return (<AddReasonForm {...user} />);
     } else {
       return (

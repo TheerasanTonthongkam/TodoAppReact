@@ -44,7 +44,7 @@
   .button-facebook, .button-google  {
     display: block;
     max-width: 360px;
-    width: 100%;
+    width: 1000px;
     margin: 10px auto 20px auto;
     height: 50px;
     line-height: 50px;
@@ -57,9 +57,10 @@
     line-height: 1.2;
     text-align: start;
     padding-left: 48px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     min-width: 135px;
+    display: table-cell;
+    display: table-cell;
+    vertical-align: middle;
 
     @media screen and (max-width: $break-small) {
       height: 35px;
