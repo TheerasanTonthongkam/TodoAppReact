@@ -21,7 +21,11 @@ var FormWrapper = React.createClass({
     var {login, user} = this.state;
 
     if (!(login && user != undefined)) {
-      return (<AddReasonForm {...user} />);
+      return (
+        <div>
+          <AddReasonForm {...user} />
+        </div>
+      );
     } else {
       return (
         <div className="form-container grid-x margin-x">

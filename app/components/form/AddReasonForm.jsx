@@ -1,8 +1,28 @@
 var React = require('react');
 var services = require('Services');
+var Loading = require('Loading');
 var AutoComplete = require('react-autocomplete');
+var FormData = require('form-data');
 
 var AddReasonForm = React.createClass({
+  onFormSubmit: function(e) {
+      e.preventDefault();
+
+      let data = new FormData();
+      data.append('file', this.state.file);
+      data.append('postId', 2);
+      data.append('reasonCode', "fds");
+      data.append('reasonPhrase', "this.state.reason");
+
+
+      var that = this;
+      services.postCampaign(data).then(function(data) {
+        console.log("Posted");
+        console.log(data);
+      }, function (e) {
+        alert('Unable to Posted');
+      });
+  },
   onImageChange(e) {
     e.preventDefault();
         let reader = new FileReader();
@@ -10,6 +30,7 @@ var AddReasonForm = React.createClass({
         reader.onloadend = () => {
             let img = $('#baseImage');
             this.setState({
+              file: file,
               imagePath: reader.result
             });
 
@@ -26,6 +47,7 @@ var AddReasonForm = React.createClass({
   },
   getInitialState: function() {
     return {
+      file: '',
       value: '',
       textLeft: 40,
       reason: '',
@@ -58,9 +80,12 @@ var AddReasonForm = React.createClass({
               </div>
             </div>
             <div className="small-12 large-5  cell">
-              <form>
+              <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
+                <input type="text" value={3} name="postId" required/>
+
                 <div className="auto-complete">
-                  <input type="text" value={this.state.value} required/>
+
+                  <input type="text" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
                       items={[
                         { id: '1', label: 'ออกกำลังกาย' },
@@ -97,17 +122,17 @@ var AddReasonForm = React.createClass({
                 </div>
 
                 <label style={{ marginTop: '20px' }}>เหตุผลของฉันคือ</label>
-                <textarea required placeholder="พิมพ์ที่นี่" maxLength="40" ref="message" onChange={this.onTextChange}></textarea>
+                <textarea required placeholder="พิมพ์ที่นี่" maxLength="40" ref="message" name="reasonPhrase" onChange={this.onTextChange}></textarea>
 
                 <div className="text-count">
                   {textLeft}
                 </div>
 
                 <a href="#" className="button-line gray file expanded">อัพโหลดรูป
-                  <input type="file" className="file" accept="image/*" onChange={this.onImageChange} required/>
+                  <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} required/>
                 </a>
 
-                <button type="submit" className="button-line expanded">SUBMIT</button>
+                <button type="submit" className="button-line expanded" >SUBMIT</button>
               </form>
             </div>
           </div>

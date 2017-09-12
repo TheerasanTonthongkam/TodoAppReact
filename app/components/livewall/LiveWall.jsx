@@ -19,7 +19,6 @@ var LiveWall = React.createClass({
   getLiveWall: function() {
     var that = this;
     services.getLiveWall().then(function (data) {
-      console.log(data);
       that.setState({
         data: data,
         isLoading: false
@@ -49,6 +48,7 @@ var LiveWall = React.createClass({
       )
     } else {
 
+      console.log(data);
       var renderItemBig = (num) => {
         if (data[num] !== undefined) {
           return (<LiveWallItem css="big" {...data[num]}/>);
@@ -56,8 +56,6 @@ var LiveWall = React.createClass({
       };
 
       var renderItemC6 = (num) => {
-        console.log(num);
-        console.log(data[num]);
         if (data[num] !== undefined) {
           return (
             <div className="small-6 cell">
@@ -68,8 +66,6 @@ var LiveWall = React.createClass({
       };
 
       var renderItemC3_12 = (num) => {
-        console.log(num);
-        console.log(data[num]);
         if (data[num] !== undefined) {
           return (
             <div className="small-3 large-12 cell">

@@ -20,7 +20,6 @@ var WhatsYourWhy = React.createClass({
   getList: function() {
     var that = this;
     services.getFamousBlog().then(function (data) {
-      console.log(data);
       that.setState({
         data: data,
         isLoading: false
