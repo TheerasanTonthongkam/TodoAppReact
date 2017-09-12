@@ -15,6 +15,13 @@
     }
   }
 
+  a {
+    color: #fff !important;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   h2 {
     font-size: 36px;
     font-family: 'AIA-head' !important;
@@ -74,6 +81,11 @@
       width: 24px;
       height: 24px;
       display: inline-block;
+      color: #fff;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
   }

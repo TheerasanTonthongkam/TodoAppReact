@@ -48,13 +48,17 @@ var Footer = React.createClass({
               </div>
               <div className="small-12 large-2 large-offset-1 cell">
                 <h2>ABOUT AIA</h2>
-                The Real Life Company<br/>
-                Solutions to meet Real Life Needs<br/>
-                AIA VItality
+                <a href="http://www.aia.com/en/about-aia/the-real-life-company.html">The Real Life Company</a>
+                <br/>
+                <a href="http://www.aia.com/en/about-aia/solutions-to-meet-real-life-needs.html">Solutions to Meet Real Life Needs</a>
+                <br/>
+                <a href="http://www.aia.com/en/about-aia/aia-vitality.html">AIA Vitality</a>
               </div>
               <div className="small-12 large-3 cell">
                 <h2>GLOBAL PRICIPAL PARTNER</h2>
-                <img src="../img/footer_logo.png"/>
+                <a target="_blank" href="http://www.tottenhamhotspur.com/home/">
+                  <img src="../img/footer_logo.png"/>
+                </a>
               </div>
             </div>
 
