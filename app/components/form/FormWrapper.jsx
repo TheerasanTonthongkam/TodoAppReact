@@ -38,8 +38,6 @@ var FormWrapper = React.createClass({
   },
   render: function() {
     var {login, id} = this.state;
-    console.log(login);
-    console.log(id);
     if (login && id > 0) {
       return (
         <div>

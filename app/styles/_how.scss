@@ -1,0 +1,72 @@
+#how-to-modal {
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: 70px;
+  margin: auto;
+  padding: 40px 60px;
+
+  .close-button {
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    background: $topbar-bg-color;
+    color: #fff;
+  }
+  .button-line {
+    width: 130px;
+    font-family: 'AIA-head' !important;
+    background: #d30f3e;
+    color: #fff;
+    font-size: 36px;
+    padding-bottom: 2px;
+  }
+
+  h3 {
+    font-family: 'AIA-head' !important;
+    color: $topbar-bg-color;
+    font-size: 48px;
+    text-align: left;
+    @media screen and (max-width: $break-small) {
+      font-size: 45px;
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    width: 95%;
+    margin-bottom: 0px;
+    padding: 25px;
+  }
+
+  ul, p {
+    font-family: 'AIA-body' !important;
+    color: $topbar-bg-color;
+    font-size: 21px;
+    text-align: left;
+    line-height: 1.2;
+
+    img {
+      margin: 20px 0;
+    }
+
+    &.number {
+      list-style-type: decimal;
+      font-size: 24px;
+      padding-bottom: 40px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid $topbar-bg-color;
+      li {
+        text-indent: 15px;
+      }
+    }
+
+    @media screen and (max-width: $break-small) {
+      font-size: 15px;
+
+      &.number {
+        font-size: 20px;
+      }
+    }
+
+  }
+}
