@@ -89,4 +89,8 @@
 
 #phone-menu {
   display: flow-root;
+  & > li {
+    width: 100%;
+  }
+
 }
