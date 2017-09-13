@@ -5,6 +5,35 @@
   padding: 0 55px;
   position: relative;
 
+  .menu.submenu {
+        width: 50%;
+        background-color: rgba(211, 15, 62, 0.7);
+        @media screen and (max-width: $break-small) {
+          width: 100%;
+        }
+
+        li {
+          a {
+            margin: auto;
+            border-width: 1px;
+            border-left: 0;
+            border-right: 0;
+            border-color: #d30f3e;
+            border-style: solid;
+            width: 100%;
+            text-align: center;
+          }
+
+          background: #fff;
+
+          &:last-child {
+            background: none;
+          }
+        }
+
+
+  }
+
   @media screen and (max-width: $break-small) {
     height: 44px;
     padding: 0;
