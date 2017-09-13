@@ -41,6 +41,9 @@ var AddReasonForm = React.createClass({
         })
       }, function (e) {
         alert('Unable to Posted');
+        that.setState({
+          isLoading: false
+        });
       });
   },
   getCookie(cname) {
