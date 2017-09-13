@@ -21,7 +21,6 @@ var LiveWall = React.createClass({
       that.setState({
         count: Math.round(c/14)
       });
-
       that.handleScroll();
     });
   },

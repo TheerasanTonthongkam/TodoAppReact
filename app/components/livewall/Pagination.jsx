@@ -69,9 +69,7 @@ var Pagination = React.createClass({
         </ul>
       );
     } else {
-
       var numbers = [];
-
       for (var i = 0; i < Math.round(count/14); i++) {
         numbers.push( {
           id: i,
