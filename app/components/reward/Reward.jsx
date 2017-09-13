@@ -83,7 +83,7 @@ var Reward = React.createClass({
               </div>
 
         </div>
-        <a onClick={this.onClickHowTo} className="button-line">วิธีร่วมกิจกรรม</a>
+        <a onClick={this.onClickHowTo} className="button-line">อ่านเงื่อนไขและกติการการร่วมสนุก</a>
         </div>
       );
   }

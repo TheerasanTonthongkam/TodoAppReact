@@ -65,7 +65,7 @@ var LoginForm = React.createClass({
     render: function() {
         return (
             <div id="login-form">
-              <h3>ล็อคอิน</h3>
+              <h3>ล็อกอิน</h3>
 
               <div className="note">หากคุณยังไม่ได้ลงทะเบียน สามารถลงทะเบียนผ่าน facebook or google ได้ที่ปุ่มด้านล่าง</div>
 
@@ -87,7 +87,7 @@ var LoginForm = React.createClass({
                 <input type="text" ref="phone" required/>
                 <label>อีเมล์</label>
                 <input type="email" ref="email" required/>
-                <button type="submit" className="button-line expanded">ล็อคอิน</button>
+                <button type="submit" className="button-line expanded">ล็อกอิน</button>
               </form>
             </div>
         );
