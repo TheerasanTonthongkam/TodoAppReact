@@ -3,6 +3,7 @@ var LiveWallGrid = require('LiveWallGrid');
 var {Link, IndexLink} = require('react-router');
 var services = require('Services');
 var Loading = require('Loading');
+var InfiniteScroll = require('react-infinite-scroll');
 
 var Pagination = React.createClass({
   getInitialState: function() {
@@ -105,6 +106,7 @@ var Pagination = React.createClass({
 
       return (
         <ul className="pagination text-center" role="navigation" aria-label="Pagination">
+
           <li className={`pagination-previous `}><a onClick={this.onClickBack} className={prevStyle} href="#" aria-label="Previous page">Previous</a></li>
           {renderNumber()}
           <li className={`pagination-next `}><a onClick={this.onClickNext} className={nextStyle} href="#" aria-label="Next page">Next</a></li>
