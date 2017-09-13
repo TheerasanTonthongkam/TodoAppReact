@@ -17,7 +17,7 @@ var Footer = React.createClass({
             <div className="grid-x grid-margin-x">
               <div className="small-12 large-2 cell">
                 <h2>CONTACT AIA GROUP</h2>
-                <a href="http://www.aia.com/en/about-aia/contact-us.html" className="button-line" href="#">CLICK FOR DETAILS</a>
+                <a href="http://campaigns.aia.co.th/spurs/contact-us" target="blank" className="button-line" >CLICK FOR DETAILS</a>
               </div>
               <div className="small-12 large-3 large-offset-1 cell">
                 <h2>VISIT OUR MARKET SITES</h2>

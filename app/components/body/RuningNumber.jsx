@@ -26,7 +26,7 @@ var RunninngNumber = React.createClass({
       start = start + 1;
       setTimeout(function() {
         {that.showRuning(start, stop)}
-      }, 100);
+      }, 3000);
     }
   },
   getCount: function() {

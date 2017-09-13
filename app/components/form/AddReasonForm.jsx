@@ -53,7 +53,7 @@ var AddReasonForm = React.createClass({
   },
   onTextChange(event) {
     event.preventDefault();
-    var text = 40 - event.target.value.length;
+    var text = 20 - event.target.value.length;
     this.setState({
       textLeft: text,
       reason: event.target.value
@@ -63,7 +63,7 @@ var AddReasonForm = React.createClass({
     return {
       file: '',
       value: '',
-      textLeft: 40,
+      textLeft: 20,
       reason: '',
       imagePath: ''
     };
@@ -133,7 +133,7 @@ var AddReasonForm = React.createClass({
                 </div>
 
                 <label style={{ marginTop: '20px' }}>เหตุผลของฉันคือ</label>
-                <textarea required placeholder="พิมพ์ที่นี่" maxLength="40" ref="message" name="reasonPhrase" onChange={this.onTextChange}></textarea>
+                <textarea required placeholder="พิมพ์ที่นี่" maxLength="20" ref="message" name="reasonPhrase" onChange={this.onTextChange}></textarea>
 
                 <div className="text-count">
                   {textLeft}

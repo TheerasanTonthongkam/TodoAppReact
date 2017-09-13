@@ -13,7 +13,7 @@ var BodyContent = React.createClass({
             <h2>68 ล้านเหตุผล ที่คนไทยเริ่มต้นดูแลสุขภาพ</h2>
           </div>
           <div className="map-body">
-            <img src="../img/map_background.png"/>
+            <img src="../img/KV_GIF-onlymap.gif"/>
           </div>
 
           <div>
