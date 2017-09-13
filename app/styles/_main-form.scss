@@ -69,6 +69,7 @@
     form {
       margin-top: 40px;
 
+
       @media screen and (max-width: $break-small) {
         margin: 0px;
       }
@@ -98,6 +99,30 @@
         border-color: #e1e1e1;
       }
     }
+
+    #thank {
+      max-width: 610px;
+      margin: auto;
+
+      h2 {
+        padding: 90px 30px 50px 30px;
+        color: #d30f3e;
+      }
+
+      .button-line.light {
+        color: #d30f3e;
+        background: #fff;
+        border-color: #d30f3e;
+        @media screen and (max-width: $break-small) {
+          margin-bottom: 15px;
+        }  
+      }
+    }
+
+  }
+
+  #add-reason-form {
+    padding-top: 60px;
   }
 
   .red-line {

@@ -19,7 +19,7 @@ var Reward = React.createClass({
                         <div className="small-6 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize2.png"/>
-                            <h3>Samsung Galaxy Note 8</h3>
+                            <h3>Samsung Galaxy<br/>Note 8</h3>
                             <h4>มูลค่า 33,900 บาท</h4>
                             <div>2 รางวัล</div>
                           </div>
@@ -27,7 +27,7 @@ var Reward = React.createClass({
                         <div className="small-6 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize3.png"/>
-                            <h3>Garmin Fenix 5X</h3>
+                            <h3>Garmin<br/>Fenix 5X</h3>
                             <h4>มูลค่า 27,900 บาท</h4>
                             <div>3 รางวัล</div>
                           </div>
@@ -37,17 +37,17 @@ var Reward = React.createClass({
                         <div className="small-6 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize4.png"/>
-                            <h3>Gift Voucher จาก<br/>Adidas</h3>
-                            <h4>มูลค่า 5,000 บาท</h4>
+                            <h3>GaRmin<br/>VivoFit 3</h3>
+                            <h4>มูลค่า 4,190 บาท</h4>
                             <div>5 รางวัล</div>
                           </div>
                         </div>
                         <div className="small-6 large-6 columns">
                           <div className="reward-card">
                             <img src="../img/prize5.png"/>
-                            <h3>Gift Voucher จาก Tops Supermarket</h3>
-                            <h4>มูลค่า 1,000 บาท</h4>
-                            <div>25 รางวัล</div>
+                            <h3>บัตรชมภาพยนตร์<br/>เมเจอร์ ซีนีเพล็กซ์</h3>
+                            <h4>รางวัลละ 2 ใบ มูลค่าใบละ xxx บาท</h4>
+                            <div>100 รางวัล</div>
                           </div>
                         </div>
                       </div>

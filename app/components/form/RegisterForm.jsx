@@ -61,8 +61,19 @@ var RegisterForm = React.createClass({
                 </div>
               </div>
 
+              <div>
                 <input className="check" type="checkbox" id="term" ref="term" required></input>
                 <label className="term" htmlFor="term">ยินยอมให้ใช้ข้อมูลข้างต้นเพื่อรับรายละเอียดเกี่ยวกับผลิตภัณฑ์</label>
+              </div>
+
+                <div>
+                  <input className="check" type="checkbox" id="contact" ref="contact" required></input>
+                  <label className="term" htmlFor="contact">ยินยอมให้ทาง เอไอเอ ติดต่อกลับท่าน</label>
+                </div>
+
+
+
+
 
               <button type="submit" className="button-line expanded">ลงทะเบียน</button>
             </form>
