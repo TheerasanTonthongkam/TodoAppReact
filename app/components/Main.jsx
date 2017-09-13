@@ -22,8 +22,6 @@ var Main = React.createClass({
         <Reward/>
         <LiveWall/>
         <Video/>
-        <WhatsYourWhy/>
-        <Blog/>
         <Footer/>
       </div>
     );
