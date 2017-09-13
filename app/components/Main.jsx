@@ -10,6 +10,7 @@ var Video = require('Video');
 var WhatsYourWhy = require('WhatsYourWhy');
 var Blog = require('Blog');
 var Footer = require('Footer');
+var Policy = require('Policy');
 
 var Main = React.createClass({
   render: function () {
@@ -23,6 +24,7 @@ var Main = React.createClass({
         <LiveWall/>
         <Video/>
         <Footer/>
+        <Policy/>
       </div>
     );
   },

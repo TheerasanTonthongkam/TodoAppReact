@@ -1,103 +1,38 @@
 #footer {
-  background: #302f2c;
-  font-family: 'AIA-body' !important;
-  color: #fff;
-  font-size: 20px;
-  padding-top: 20px;
-  @media screen and (max-width: $break-small) {
-    font-size: 14px;
-  }
-  & > .grid-x {
-    margin: auto;
-    max-width: 97%;
-    @media screen and (max-width: $break-small) {
-      max-width: 95%;
+    background: #302f2c;
+    div {
+        padding: 20px;
+        div {
+            margin: 0 0 10px;
+            text-align: center;
+            img {
+                width: 32px;
+                height: auto;
+            }
+        }
+        p {
+            color: #b3b1a8;
+            font-size: 16px;
+            text-align: center;
+        }
     }
-  }
+}
 
-  a {
-    color: #fff !important;
-    &:hover {
-      opacity: 0.8;
+#box__policy {
+    background: #292825;
+    div {
+        padding: 20px;
+        p {
+            color: #b3b1a8;
+            font-size: 16px;
+            text-align: center;
+            a {
+                color: #b3b1a8;
+                padding: 0 5px;
+            }
+        }
+        p:first-child {
+            margin-bottom: 20px;
+        }
     }
-  }
-
-  h2 {
-    font-size: 36px;
-    font-family: 'AIA-head' !important;
-    color: #b3b1a8;
-    margin: 0px;
-    @media screen and (max-width: $break-small) {
-      font-size: 30px;
-      margin-top: 10px;
-    }
-  }
-
-  .button-line {
-    width: 100%;
-    background: none;
-    color: #fff;
-    border-color: #fff;
-    margin-top: 10px;
-    line-height: 45px;
-
-    @media screen and (max-width: $break-small) {
-      line-height: 38px;
-      margin-bottom: 0;
-    }
-  }
-
-  select {
-    margin-top: 10px;
-    height: 50px;
-    font-size: inherit;
-    line-height: 1;
-
-    @media screen and (max-width: $break-small) {
-      height: 38px;
-      margin: 0;
-    }
-  }
-
-  .line {
-    width: 95%;
-    height: 1px;
-    background-color: #b3b1a8;
-    margin: 70px auto 30px auto;
-    opacity: 0.7;
-    @media screen and (max-width: $break-small) {
-      width: 100%;
-      margin: 20px 0;
-    }
-  }
-
-  .link {
-    text-align: center;
-    .center {
-      margin: 0 10px !important;
-    }
-
-    a {
-      width: 24px;
-      height: 24px;
-      display: inline-block;
-      color: #fff;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-
-  }
-
-  .copy-right {
-    opacity: 0.7;
-    text-align: center;
-    padding: 40px 0;
-    @media screen and (max-width: $break-small) {
-      padding: 50px 0 60px 0;
-    }
-
-  }
-
 }
