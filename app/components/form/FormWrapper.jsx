@@ -33,11 +33,13 @@ var FormWrapper = React.createClass({
     document.cookie = `userId=${data.id}`;
     this.setState({
       login: true,
+      id: data.id
     });
   },
   render: function() {
     var {login, id} = this.state;
-
+    console.log(login);
+    console.log(id);
     if (login && id > 0) {
       return (
         <div>

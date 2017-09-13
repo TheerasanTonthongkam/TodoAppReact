@@ -23,8 +23,6 @@ var Main = React.createClass({
         <Reward/>
         <LiveWall/>
         <Video/>
-        <WhatsYourWhy/>
-        <Blog/>
         <Footer/>
         <Policy/>
       </div>

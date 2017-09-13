@@ -1,5 +1,6 @@
 #add-reason-form {
   background: #fff !important;
+  min-height: inherit;
 
   form {
     margin-top: 0 !important;
@@ -11,9 +12,6 @@
     color: #b4133c;
     font-size: 24px;
     padding: 5px 10px;
-
-
-
   }
 
   .auto-complete {

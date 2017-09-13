@@ -3,8 +3,21 @@ var services = require('Services');
 var Loading = require('Loading');
 var AutoComplete = require('react-autocomplete');
 var FormData = require('form-data');
+var {Link, IndexLink} = require('react-router');
 
 var AddReasonForm = React.createClass({
+  onClickShare: function(e) {
+    e.preventDefault();
+    var postId = this.getCookie('userId');
+    var url = window.location.href.replace(window.location.hash, `#/livewall&postId=${postId}`);
+
+    console.log(url);
+    FB.ui(
+       {
+        method: 'share',
+        href: url
+      }, function(response){});
+  },
   onFormSubmit: function(e) {
       e.preventDefault();
       console.log(this.getCookie('userId'));
@@ -16,9 +29,16 @@ var AddReasonForm = React.createClass({
 
 
       var that = this;
+      that.setState({
+        isLoading: true
+      })
+
       services.postCampaign(data).then(function(data) {
-        console.log("Posted");
-        console.log(data);
+        that.setState({
+          isLoading: false,
+          isPost: true,
+          imageUrl: data.imagePath
+        })
       }, function (e) {
         alert('Unable to Posted');
       });
@@ -65,11 +85,15 @@ var AddReasonForm = React.createClass({
       value: '',
       textLeft: 20,
       reason: '',
-      imagePath: ''
+      imagePath: '',
+      isLoading: false,
+      isPost: false,
+      imageUrl: ''
     };
   },
   render: function() {
-    var {textLeft, imagePath, value, reason} = this.state;
+    var {textLeft, imagePath, value, reason, isLoading, isPost} = this.state;
+    var postId = this.getCookie('userId');
 
     var divStyle = {
         backgroundImage: `url(${imagePath})`,
@@ -77,8 +101,46 @@ var AddReasonForm = React.createClass({
         backgroundPosition: '50%'
     };
 
-    return (
-        <div id="add-reason-form">
+    var renderForm = () => {
+      if (isPost) {
+        return (
+          <div id="thank">
+            <h2>
+              ขอบคุณที่ร่วมกิจกรรมกับ AIA
+ติดตามรายชื่อผู้โชคดีเร็วๆนี้
+            </h2>
+            <div className="grid-x grid-margin-x">
+              <div className="small-12 large-6 cell">
+                <a href="#" className="button-line light" onClick={this.onClickShare}>แชร์ <img src="../img/fb-art.png"/></a>
+              </div>
+              <div className="small-12 large-6 cell">
+                <a href="#" className="button-line light">SAVE รูป</a>
+              </div>
+              <div className="small-12 cell">
+                <Link to={`/livewall?postId=${postId}`} className="button-line">ดู LIVE WALL ของคุณ</Link>
+              </div>
+            </div>
+          </div>
+        );
+      } else if (isLoading) {
+        return (
+          <div>
+            <div className='live-wall-card big' style={{opacity: 0}}>
+              <div className="text">
+                  <div className="reason">{value}</div>
+                  <div className="why">{reason}</div>
+              </div>
+              <div className="img" style={divStyle}>
+              </div>
+              <div className="text">
+                <img src="../img/WhayYourWhy-Logo.png"/>
+              </div>
+            </div>
+            <Loading/>
+          </div>
+        );
+      } else {
+        return (
           <div className="grid-x grid-margin-x">
             <div className="small-12 large-4 large-offset-2 cell">
               <div className='live-wall-card big'>
@@ -147,6 +209,13 @@ var AddReasonForm = React.createClass({
               </form>
             </div>
           </div>
+        );
+      }
+    }
+
+    return (
+        <div id="add-reason-form">
+          {renderForm()}
         </div>
     );
   },

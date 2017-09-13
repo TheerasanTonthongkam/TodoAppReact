@@ -87,7 +87,7 @@ var LoginForm = React.createClass({
                 <input type="text" ref="phone" required/>
                 <label>อีเมล์</label>
                 <input type="email" ref="email" required/>
-                <button type="submit" className="button-line expanded">ล็อกอิน</button>
+                <button type="submit" className="button-line expanded">ล็อคอิน</button>
               </form>
             </div>
         );
