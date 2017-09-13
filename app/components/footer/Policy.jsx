@@ -5,7 +5,7 @@ var Policy = React.createClass({
     render: function() {
         return (
         <div id="box__policy">
-            <div class="container">
+            <div className="container">
                 <p>
                     <a href="http://www.aia.co.th/th/about-aia/terms-of-use.html" target="_blank">ข้อตกลงการใช้</a>
                     <span>|</span>

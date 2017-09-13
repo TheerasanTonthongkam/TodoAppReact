@@ -2,6 +2,9 @@ var React = require('react');
 var LiveWallGrid = require('LiveWallGrid');
 var Pagination = require('Pagination');
 var {Link, IndexLink} = require('react-router');
+var InfiniteScroll = require('react-infinite-scroll');
+
+var Loading = require('Loading');
 
 var LiveWall = React.createClass({
   getInitialState: function() {
@@ -27,7 +30,8 @@ var LiveWall = React.createClass({
           <h2>LIVE WALL</h2>
           <div className="wrapper">
 
-            <LiveWallGrid page={page}/>
+<LiveWallGrid page={page}/>
+            
 
             <div className="break"></div>
             <Pagination onPageChange={this.onPageChange} />
