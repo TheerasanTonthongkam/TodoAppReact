@@ -9,7 +9,7 @@ var AddReasonForm = React.createClass({
   onClickShare: function(e) {
     e.preventDefault();
     var postId = this.getCookie('userId');
-    var url = window.location.href.replace(window.location.hash, `#/livewall&postId=${postId}`);
+    var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
 
     console.log(url);
     FB.ui(
