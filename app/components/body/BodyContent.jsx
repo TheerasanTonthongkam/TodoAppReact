@@ -10,10 +10,10 @@ var BodyContent = React.createClass({
         <div className="map">
           <div className="all-title">
             <img className="map-title" src="../img/Title.png"/>
-            <h2>68 ล้านเหตุผล ที่คนไทยเริ่มต้นดูแลสุขภาพ</h2>
+            <h2><span className="big">68</span> ล้านเหตุผล ที่คนไทยเริ่มต้นดูแลสุขภาพ</h2>
           </div>
           <div className="map-body">
-            <img src="../img/KV_GIF-onlymap.gif"/>
+            <img src="../img/map.png"/>
           </div>
 
           <div>
