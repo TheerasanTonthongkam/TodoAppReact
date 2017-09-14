@@ -27,6 +27,10 @@ var TopBar = React.createClass({
             </ul>
           </li>
         </ul>
+
+        <a id="up-button" href="#main-menu-container" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
+          <img src="../img/ic_up.png"/>
+        </a>
       </div>
     );
   },
@@ -34,6 +38,7 @@ var TopBar = React.createClass({
     var elem = new Foundation.DropdownMenu($('#phone-menu'), null);
     var elem = new Foundation.SmoothScroll($('#desktop-menu'), null);
     var elem = new Foundation.SmoothScroll($('#phone-menu-list'), null);
+    var elem = new Foundation.SmoothScroll($('#main-menu-container'), null);
   }
 });
 

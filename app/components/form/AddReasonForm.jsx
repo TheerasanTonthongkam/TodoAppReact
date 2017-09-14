@@ -171,6 +171,7 @@ var AddReasonForm = React.createClass({
                         { id: '5', label: 'นอนเร็ว ตื่นเช้า' },
                         { id: '6', label: 'วิ่งทุกวัน' }
                       ]}
+                      placeholder="เลือกกิจกรรมของคุณ"
                       shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}
                       getItemValue={item => item.label}
                       renderItem={(item, highlighted) =>
@@ -204,7 +205,7 @@ var AddReasonForm = React.createClass({
                   {textLeft}
                 </div>
 
-                <a href="#" className="button-line gray file expanded">อัพโหลดรูป
+                <a href="#" className="button-line gray file expanded">อัปโหลด
                   <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} required/>
                 </a>
 

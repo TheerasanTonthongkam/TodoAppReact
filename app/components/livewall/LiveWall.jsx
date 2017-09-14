@@ -12,7 +12,7 @@ var LiveWall = React.createClass({
             <LiveWallGrid page={1}/>
 
             <div className="break"></div>
-            <Link to="/livewall" className="button-line">ดู LIVE WALL ทั้งหมด</Link>
+            <Link to="/livewall" className="button-line" maintainScrollPosition={true}>ดู LIVE WALL ทั้งหมด</Link>
           </div>
         </div>
     );

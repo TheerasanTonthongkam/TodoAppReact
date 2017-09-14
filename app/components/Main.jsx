@@ -30,6 +30,9 @@ var Main = React.createClass({
   },
   componentDidMount: function () {
     //var elem = new Foundation.OffCanvas($('#offCanvas'), false);
+  },
+  componentWillUnmount: function() {
+    window.scrollTo(0, 0);
   }
 });
 

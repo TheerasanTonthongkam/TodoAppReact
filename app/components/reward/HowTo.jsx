@@ -16,7 +16,7 @@ var HowTo = React.createClass({
             <img src="../img/d-f-1.png" className="show-for-large"></img>
           </li>
           <li>
-            อัพโหลด #WhatsYourWhy เหตุผลที่ทำให้คุณ
+            อัปโหลด #WhatsYourWhy เหตุผลที่ทำให้คุณ
            เริ่มต้นเปลี่ยนแปลงตัวคุณให้มีสุขภาพดี
            (รูป + ข้อความ)
             <img src="../img/m-f-2.png" className="hide-for-large"></img>

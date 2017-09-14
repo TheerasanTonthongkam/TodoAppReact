@@ -75,16 +75,22 @@ var LiveWall = React.createClass({
           <div className="wrapper">
             {renderGrid()}
             <div className="break"></div>
-            <Link to="/" className="button-line">กลับ</Link>
+            <br/>
+            <br/>
+            <Link to="/" id="back-button" maintainScrollPosition={true}>
+              <img src="../img/ic_back.png"/>
+            </Link>
           </div>
         </div>
     );
   },
   componentDidMount: function() {
     window.addEventListener('scroll', this.handleScroll);
+    window.scrollTo(0, 0);
     this.getCount();
 },
   componentWillUnmount: function() {
+    window.scrollTo(0, 0);
       window.removeEventListener('scroll', this.handleScroll);
   }
 });

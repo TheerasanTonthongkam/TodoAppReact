@@ -85,6 +85,17 @@
       line-height: 90px;
     }
   }
+
+  #up-button {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    @media screen and (max-width: $break-small) {
+      zoom: 0.5;
+      z-index: 9;
+    }
+  }
+
 }
 
 #phone-menu {
