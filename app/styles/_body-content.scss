@@ -6,23 +6,30 @@
     .map {
         position: relative;
         text-align: center;
+        padding-top: 60px;
+        @media screen and (min-width: $break-not-small) {
+          padding-top: 0;
+        }
         .map-body {
-          width: 75%;
-          margin: -53px auto -20px auto;
+          width: 55%;
+          margin: -233px auto -20px auto;
+          padding: 10px 10px;
           text-align: center;
-          z-index: -1;
+          opacity: 0.6;
+          position: absolute;
+          z-index: 0;
             @media screen and (min-width: $break-not-small) {
-              width: 50%;
+              width: 100%;
               text-align: center;
-              max-width: 650px;
-              min-width: 550px;
+              margin: 0;
+              padding: 0;
 
               img {
                 display: inline-block;
                 vertical-align: top;
                 max-width: 100%;
-                height: 520px;
-                margin-top: 75px;
+                height: 570px;
+                margin-top: 25px;
                 opacity: 0.8;
               }
             }
@@ -34,7 +41,7 @@
             }
         }
         .all-title {
-          z-index: 0;
+          z-index: 1;
           position: relative;
             @media screen and (min-width: $break-not-small) {
               width: 375px;
@@ -45,7 +52,11 @@
             }
         }
         #runing-number {
+              margin-top: 50px;
+              z-index: 1;
+              position: relative;
             @media screen and (min-width: $break-not-small) {
+              margin-top: 0;
               width: 570px;
               position: absolute;
               left: 52%;
@@ -78,6 +89,8 @@
             display: block;
             margin: auto;
             margin-top: 15px;
+            position: relative;
+            z-index: 1;
 
             .text-big {
                 font-size: 45px;
@@ -119,6 +132,8 @@
             margin: 35px auto;
             font-size: 20px;
             font-family: 'AIA-body' !important;
+            position: relative;
+            z-index: 1;
             .text-big {
                 font-size: 30px;
                 font-family: 'AIA-body' !important;
