@@ -22,11 +22,16 @@ var AddReasonForm = React.createClass({
   onClickShare: function(e) {
     e.preventDefault();
     var postId = this.getCookie('userId');
-    var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
+    // var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
+    var url = this.state.imageUrl;
+    console.log(url);
+
     FB.ui(
        {
         method: 'share',
-        href: url
+        href: url,
+        hashtag: '#WhatsYourWhy',
+        quote: `${this.state.value} - ${this.state.reason} #AIA`
       }, function(response){});
 
   },
@@ -216,7 +221,7 @@ var AddReasonForm = React.createClass({
                   {textLeft}
                 </div>
 
-                <a href="#" className="button-line gray file expanded">อัปโหลด
+                <a href="#" className="button-line gray file expanded">อัปโหลดรูป
                   <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} required/>
                 </a>
 
