@@ -161,7 +161,7 @@ var AddReasonForm = React.createClass({
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
                 <div className="auto-complete">
-                  <input type="text" value={this.state.value} name="reasonCode" required/>
+                  <input type="text" placeholder="เลือกกิจกรรมของคุณ" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
                       items={[
                         { id: '1', label: 'ออกกำลังกาย' },

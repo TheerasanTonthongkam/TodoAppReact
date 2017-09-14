@@ -56,7 +56,7 @@ var RegisterForm = React.createClass({
                   <input type="text" ref="phone" required/>
                 </div>
                 <div className="small-6 cell">
-                  <label>อีเมล์</label>
+                  <label>อีเมล</label>
                   <input type="email" ref="email" required/>
                 </div>
               </div>

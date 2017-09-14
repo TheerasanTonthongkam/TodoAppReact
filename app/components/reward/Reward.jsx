@@ -34,11 +34,12 @@ var Reward = React.createClass({
         {renderHowTo()}
         <div id="reward">
             <h2>ของรางวัล</h2>
+            <p>รวมกว่า 800 รางวัล รวมมูลค่ากว่า <strong>500,000</strong> บาท</p>
               <div className="grid-x">
                 <div className="medium-12 large-6 columns">
                   <div className="reward-card big">
                     <img src="../img/hat.png"/>
-                    <h3>หมวกพร้อมลายเซนต์จาก David Backham</h3>
+                    <h3>หมวกพร้อมลายเซ็นจาก<br/>David Backham</h3>
                     <div>1 รางวัล</div>
                   </div>
                 </div>
@@ -47,7 +48,7 @@ var Reward = React.createClass({
                     <div className="small-6 large-6 columns">
                       <div className="reward-card">
                         <img src="../img/prize2.png"/>
-                        <h3>Samsung Galaxy<br/>Note 8</h3>
+                        <h3>Samsung Galaxy Note 8</h3>
                         <h4>มูลค่า 33,900 บาท</h4>
                         <div>2 รางวัล</div>
                       </div>
@@ -55,27 +56,27 @@ var Reward = React.createClass({
                     <div className="small-6 large-6 columns">
                       <div className="reward-card">
                         <img src="../img/prize3.png"/>
-                        <h3>Garmin<br/>Fenix 5X</h3>
-                        <h4>มูลค่า 27,900 บาท</h4>
-                        <div>3 รางวัล</div>
+                        <h3>Garmin VivoFit 3</h3>
+                        <h4>มูลค่า 4,190 บาท</h4>
+                        <div>30 รางวัล</div>
                       </div>
                     </div>
                   </div>
                   <div className="grid-x">
-                    <div className="small-6 large-6 columns">
+                  <div className="small-6 large-6 columns">
                       <div className="reward-card">
-                        <img src="../img/prize4.png"/>
-                        <h3>GaRmin<br/>VivoFit 3</h3>
-                        <h4>มูลค่า 4,190 บาท</h4>
-                        <div>5 รางวัล</div>
+                        <img src="../img/prize5.png"/>
+                        <h3>บัตรชมภาพยนตร์<br/>ในเครือเมเจอร์ซีนีเพล็กซ์</h3>
+                        <h4>รางวัลละ 2 ใบ</h4>
+                        <div>300 รางวัล</div>
                       </div>
                     </div>
                     <div className="small-6 large-6 columns">
                       <div className="reward-card">
-                        <img src="../img/prize5.png"/>
-                        <h3>บัตรชมภาพยนตร์<br/>เมเจอร์ ซีนีเพล็กซ์</h3>
-                        <h4>รางวัลละ 2 ใบ มูลค่าใบละ xxx บาท</h4>
-                        <div>100 รางวัล</div>
+                        <img src="../img/prize4.png"/>
+                        <h3>ของที่ระลึกจาก AIA VITALITY</h3>
+                        <h4>รางวัลละ 200 บาท</h4>
+                        <div>500 รางวัล</div>
                       </div>
                     </div>
                   </div>
@@ -83,7 +84,7 @@ var Reward = React.createClass({
               </div>
 
         </div>
-        <a onClick={this.onClickHowTo} className="button-line">อ่านเงื่อนไขและกติการการร่วมสนุก</a>
+        <a onClick={this.onClickHowTo} className="button-line">เงื่อนไขและกติการการร่วมสนุก</a>
         </div>
       );
   }

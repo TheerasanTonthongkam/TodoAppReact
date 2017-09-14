@@ -19,7 +19,7 @@ var BodyContent = React.createClass({
           <div>
             <RuningNumber/>
             <span className="leading-text">
-              <span className="text-big">คนไทย</span> ร่วมเป็นส่วนหนึ่งบน<br/>
+              <span className="text-big">คนได้</span> ร่วมเป็นส่วนหนึ่งบน<br/>
                   AIA’s #WhatsYourWhy Live Wall แล้ว
 
                   <a id="join-btn" href="#main-form" className="join-btn" data-smooth-scroll data-animation-easing="swing" data-threshold="0">ร่วมสนุกเลย</a>
@@ -27,10 +27,10 @@ var BodyContent = React.createClass({
 
 
           <span className="des-text">
-            AIA เรามุ่งมั่นเพื่อช่วยทำให้ผู้คนมีชีวิตที่ยืนยาวขึ้น มีสุขภาพที่ดีขึ้น และมีชีวิตที่ดีขึ้น
-เราจึงได้จับมือกับ David Beckham แบรนด์แอมบาสเดอร์ระดับโลก เพื่อตั้งคำถามกับ
-ผู้คนทั่วโลกถึง “เหตุผล” ที่ทำให้พวกเค้ามุ่งมั่นเปลี่ยนแปลงให้สุขภาพของตัวเองดีขึ้น
-และไม่ว่า “เหตุผล” ของคุณคืออะไร ที่ AIA เรามี “วิธี” พาคุณไปให้ถึงเป้าหมายนั้นเสมอ<br/>
+          เอไอเอ เราส่งเสริมให้คนไทยมีคุณภาพชีวิตที่ดี สุขภาพแข็งแรง และมีอายุยืนยาว  
+          เราจึงได้จับมือกับ David Beckham แบรนด์แอมบาสเดอร์ระดับโลก เพื่อตั้งคำถามกับ
+          ผู้คนทั่วโลกถึง “เหตุผล” ที่ทำให้พวกเขามุ่งมั่นเปลี่ยนแปลงให้สุขภาพของตัวเองดีขึ้น
+          และไม่ว่า “เหตุผล” ของคุณคืออะไร ที่ เอไอเอ เรามี “วิธี” พาคุณไปให้ถึงเป้าหมายนั้นเสมอ<br/>
 <span className="text-big">แล้วเหตุผลของคุณคืออะไร?</span>
           </span>
           </div>
