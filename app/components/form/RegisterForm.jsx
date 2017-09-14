@@ -52,8 +52,8 @@ var RegisterForm = React.createClass({
 
               <div className="grid-x grid-margin-x">
                 <div className="small-6 cell">
-                  <label>เบอร์โทรศัพท์</label>
-                  <input type="text" ref="phone" required/>
+                  <label>เบอร์โทรศัพท์มือถือ</label>
+                  <input type="text" ref="phone" placeholder="0XX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$" required/>
                 </div>
                 <div className="small-6 cell">
                   <label>อีเมล</label>
@@ -62,12 +62,12 @@ var RegisterForm = React.createClass({
               </div>
 
               <div>
-                <input className="check" type="checkbox" id="term" ref="term" required></input>
+                <input className="check" type="checkbox" id="term" defaultChecked></input>
                 <label className="term" htmlFor="term">ยินยอมให้ใช้ข้อมูลข้างต้นเพื่อรับรายละเอียดเกี่ยวกับผลิตภัณฑ์</label>
               </div>
 
                 <div>
-                  <input className="check" type="checkbox" id="contact" ref="contact" required></input>
+                  <input className="check" type="checkbox" id="contact" defaultChecked></input>
                   <label className="term" htmlFor="contact">ยินยอมให้ทาง เอไอเอ ติดต่อกลับท่าน</label>
                 </div>
 

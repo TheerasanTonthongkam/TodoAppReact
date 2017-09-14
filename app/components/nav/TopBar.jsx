@@ -7,7 +7,7 @@ var TopBar = React.createClass({
       <div id="main-menu-container">
         <img id="logo" src="../img/logo_aia.png"/>
         <ul id="desktop-menu" className="menu align-right show-for-large" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
-          <li><a href="#body-content">#WhatsYourWhy</a></li>
+          <li><a href="#body-content">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
           <li><a href="#main-form">ร่วมกิจกรรม</a></li>
           <li><a href="#reward">รางวัล</a></li>
           <li><a href="#live-wall">ดู Live Wall</a></li>
@@ -19,7 +19,7 @@ var TopBar = React.createClass({
               <img src="../img/ic_menu.png"/>
             </a>
             <ul id="phone-menu-list" className="menu" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
-                <li><a className="sub-menu" href="#body-content">#WhatsYourWhy</a></li>
+                <li><a className="sub-menu" href="#body-content">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
                 <li><a className="sub-menu" href="#main-form">ร่วมกิจกรรม</a></li>
                 <li><a className="sub-menu" href="#reward">รางวัล</a></li>
                 <li><a className="sub-menu" href="#live-wall">ดู Live Wall</a></li>

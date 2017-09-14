@@ -67,7 +67,7 @@ var LoginForm = React.createClass({
             <div id="login-form">
               <h3>ล็อกอิน</h3>
 
-              <div className="note">หากคุณยังไม่ได้ลงทะเบียน สามารถลงทะเบียนผ่าน facebook or google ได้ที่ปุ่มด้านล่าง</div>
+              <div className="note">หากคุณยังไม่ได้ลงทะเบียน สามารถลงทะเบียนผ่าน Facebook หรือ Google ได้ที่ปุ่มด้านล่าง</div>
 
               <div style={{marginTop: '10px'}} className="grid-x grid-margin-x">
                 <div className="small-6 cell">
@@ -83,9 +83,9 @@ var LoginForm = React.createClass({
               </div>
 
               <form style={{marginTop: '10px'}} onSubmit={this.onFormSubmit}>
-                <label>เบอร์โทรศัพท์</label>
-                <input type="text" ref="phone" required/>
-                <label>อีเมล์</label>
+                <label>เบอร์โทรศัพท์มือถือ</label>
+                <input type="text" ref="phone" required placeholder="0XX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$" />
+                <label>อีเมล</label>
                 <input type="email" ref="email" required/>
                 <button type="submit" className="button-line expanded">ล็อกอิน</button>
               </form>

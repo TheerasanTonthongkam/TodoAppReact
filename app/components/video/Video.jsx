@@ -5,7 +5,7 @@ var Video = React.createClass({
         return (
             <div id="video">
               <div className="responsive-embed widescreen">
-                <iframe id="video-frame" width="560" height="315" src="https://www.youtube.com/embed/8m-lf4iaUQU" frameBorder="0" allowFullScreen></iframe>
+                <iframe id="video-frame" width="560" height="315" src="https://www.youtube.com/embed/VCg8udKHx" frameBorder="0" allowFullScreen></iframe>
               </div>
             </div>
         );

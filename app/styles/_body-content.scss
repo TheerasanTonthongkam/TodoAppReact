@@ -1,7 +1,7 @@
 #body-content {
     background: $topbar-bg-color;
     @media screen and (min-width: $break-not-small) {
-        height: 785px;
+        height: 615px;
     }
     .map {
         position: relative;
@@ -21,7 +21,7 @@
                 display: inline-block;
                 vertical-align: top;
                 max-width: 100%;
-                height: auto;
+                height: 520px;
                 margin-top: 75px;
                 opacity: 0.8;
               }
@@ -34,14 +34,14 @@
             }
         }
         .all-title {
-          z-index: 1;
+          z-index: 0;
           position: relative;
             @media screen and (min-width: $break-not-small) {
               width: 375px;
               position: absolute;
               z-index: 1;
               right: 59%;
-              top: 205px;
+              top: 150px;
             }
         }
         #runing-number {
@@ -49,7 +49,7 @@
               width: 570px;
               position: absolute;
               left: 52%;
-              top: 290px;
+              top: 200px;
               z-index: 1;
             }
         }
@@ -89,7 +89,7 @@
               position: absolute;
               z-index: 1;
               left: 52%;
-              top: 390px;
+              top: 300px;
               font-size: 36px;
                 .text-big {
                     font-size: 48px;
@@ -129,7 +129,7 @@
               position: absolute;
               width: 480px;
               right: 55%;
-              top: 425px;
+              top: 365px;
               font-size: 18px;
                 .text-big {
                   font-size: 28px;
