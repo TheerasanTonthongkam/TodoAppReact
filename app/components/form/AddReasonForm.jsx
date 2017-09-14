@@ -165,11 +165,10 @@ var AddReasonForm = React.createClass({
                     <AutoComplete
                       items={[
                         { id: '1', label: 'ออกกำลังกาย' },
-                        { id: '2', label: 'กินอาหารสุขภาพ' },
-                        { id: '3', label: 'เลิกบุหรี่' },
-                        { id: '4', label: 'เลิกเหล้า' },
-                        { id: '5', label: 'นอนเร็ว ตื่นเช้า' },
-                        { id: '6', label: 'วิ่งทุกวัน' }
+                        { id: '2', label: 'ทานอาหารสุขภาพ' },
+                        { id: '3', label: 'เลิกเหล้า/เลิกบุหรี่' },
+                        { id: '4', label: 'พักผ่อน' },
+                        { id: '5', label: 'ดื่มน้ำให้มากขึ้น' }
                       ]}
                       placeholder="เลือกกิจกรรมของคุณ"
                       shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}

@@ -63,12 +63,12 @@ var RegisterForm = React.createClass({
 
               <div>
                 <input className="check" type="checkbox" id="term" defaultChecked></input>
-                <label className="term" htmlFor="term">ยินยอมให้ใช้ข้อมูลข้างต้นเพื่อรับรายละเอียดเกี่ยวกับผลิตภัณฑ์</label>
+                <label className="term" htmlFor="term">ยินยอมให้ใช้ข้อมูลข้างต้นเพื่อให้เอไอเอติดต่อกลับ</label>
               </div>
 
                 <div>
                   <input className="check" type="checkbox" id="contact" defaultChecked></input>
-                  <label className="term" htmlFor="contact">ยินยอมให้ทาง เอไอเอ ติดต่อกลับท่าน</label>
+                  <label className="term" htmlFor="contact">สนใจเข้าร่วมโครงการสุขภาพดีกับเอไอเอไวทัลลิตี้</label>
                 </div>
 
 
