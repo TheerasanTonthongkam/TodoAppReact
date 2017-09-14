@@ -6,17 +6,29 @@ var FormData = require('form-data');
 var {Link, IndexLink} = require('react-router');
 
 var AddReasonForm = React.createClass({
+  onClickPlayAgain: function(e) {
+    e.preventDefault();
+    this.setState({
+      file: '',
+      value: '',
+      textLeft: 20,
+      reason: '',
+      imagePath: '',
+      isLoading: false,
+      isPost: false,
+      imageUrl: ''
+    });
+  },
   onClickShare: function(e) {
     e.preventDefault();
     var postId = this.getCookie('userId');
     var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
-
-    console.log(url);
     FB.ui(
        {
         method: 'share',
         href: url
       }, function(response){});
+
   },
   onFormSubmit: function(e) {
       e.preventDefault();
@@ -117,7 +129,7 @@ var AddReasonForm = React.createClass({
                 <a href="#" className="button-line light" onClick={this.onClickShare}>แชร์ <img src="../img/fb-art.png"/></a>
               </div>
               <div className="small-12 large-6 cell">
-                <a href="#" className="button-line light">SAVE รูป</a>
+                <a href="#" className="button-line light" onClick={this.onClickPlayAgain}>เล่นอีกครั้ง</a>
               </div>
               <div className="small-12 cell">
                 <Link to={`/livewall?postId=${postId}`} className="button-line">ดู LIVE WALL ของคุณ</Link>

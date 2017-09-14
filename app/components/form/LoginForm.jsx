@@ -84,7 +84,7 @@ var LoginForm = React.createClass({
 
               <form style={{marginTop: '10px'}} onSubmit={this.onFormSubmit}>
                 <label>เบอร์โทรศัพท์มือถือ</label>
-                <input type="text" ref="phone" required placeholder="0XX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$" />
+                <input type="text" ref="phone" required placeholder="0XXXXXXXXX" pattern="^\d{10}$" />
                 <label>อีเมล</label>
                 <input type="email" ref="email" required/>
                 <button type="submit" className="button-line expanded">ล็อกอิน</button>

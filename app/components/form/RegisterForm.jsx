@@ -53,7 +53,7 @@ var RegisterForm = React.createClass({
               <div className="grid-x grid-margin-x">
                 <div className="small-6 cell">
                   <label>เบอร์โทรศัพท์มือถือ</label>
-                  <input type="text" ref="phone" placeholder="0XX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$" required/>
+                  <input type="text" ref="phone" placeholder="0XXXXXXXXX" pattern="^\d{10}$" required/>
                 </div>
                 <div className="small-6 cell">
                   <label>อีเมล</label>
