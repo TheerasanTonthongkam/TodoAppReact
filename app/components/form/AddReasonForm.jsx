@@ -16,7 +16,8 @@ var AddReasonForm = React.createClass({
       imagePath: '',
       isLoading: false,
       isPost: false,
-      imageUrl: ''
+      imageUrl: '',
+      imageToShow: ''
     });
   },
   onClickShare: function(e) {
@@ -79,17 +80,35 @@ var AddReasonForm = React.createClass({
   },
   onImageChange(e) {
     e.preventDefault();
-        let reader = new FileReader();
-        let file = e.target.files[0];
-        reader.onloadend = () => {
-            let img = $('#baseImage');
-            this.setState({
-              file: file,
-              imagePath: reader.result
+      let reader = new FileReader();
+      let file = e.target.files[0];
+      reader.onloadend = () => {
+          let img = $('#baseImage');
+          let preCanvas = $('#preCanvas');
+          let ratio = 1;
+
+          this.setState({
+            file: file,
+            imagePath: reader.result,
+            imageToShow: reader.result,
+            width: img.width() * ratio,
+            height: img.height() * ratio
+          });
+
+          ratio = preCanvas.width() / img.width();
+
+          console.log(ratio + " : " + this.state.width + " : " + this.state.height);
+
+          this.setState({
+                ...this.state,
+                width: img.width() * ratio,
+                height: img.height() * ratio
             });
 
-        };
-        reader.readAsDataURL(file);
+            this.generateCanvas();
+
+      };
+      reader.readAsDataURL(file);
   },
   onTextChange(event) {
     event.preventDefault();
@@ -108,11 +127,58 @@ var AddReasonForm = React.createClass({
       imagePath: '',
       isLoading: false,
       isPost: false,
-      imageUrl: ''
+      imageUrl: '',
+      imageToDownload: '',
+      width:1400,
+      height:1184
     };
   },
+  generateCanvas: function() {
+    let that = this;
+        html2canvas($('#preCanvas'), {
+            onrendered: function(canvas) {
+              canvas.toBlob(function(blob) {
+                  console.log(blob);
+                  var f = new File([blob], "filename.png");
+                  console.log(f);
+                  that.setState({
+                      ...that.state,
+                      imageToDownload: canvas.toDataURL('image/png'),
+                      file: f
+                  });
+
+                  location.href = '#preCanvas2';
+              });
+
+            },
+        });
+  },
   render: function() {
-    var {textLeft, imagePath, value, reason, isLoading, isPost} = this.state;
+    var {textLeft,
+      imagePath,
+      value,
+      reason,
+      isLoading,
+      isPost,
+      imageToDownload,
+      imageToShow, width, height, imageToDownload} = this.state;
+
+      var valueConvert = value;
+      var reasonConvert = reason;
+
+    let canvasHeight = $('#preCanvas').height();
+    let top = (canvasHeight - height)/2;
+    if (top < 0) {
+        top = 0;
+    }
+    console.log(canvasHeight, top);
+
+    let style = {
+        top: 120,
+        left: 0
+    };
+
+
     var postId = this.getCookie('userId');
 
     var divStyle = {
@@ -120,6 +186,12 @@ var AddReasonForm = React.createClass({
         backgroundSize: 'cover',
         backgroundPosition: '50%'
     };
+
+    let renderDownloadButton = () => {
+            if (imageToDownload !== '') {
+                return <a href={imageToDownload} download={"image_"} className="button expanded large">บันทึกรูป</a>
+            }
+        };
 
     var renderForm = () => {
       if (isPost) {
@@ -162,17 +234,44 @@ var AddReasonForm = React.createClass({
       } else {
         return (
           <div className="grid-x grid-margin-x">
+
+            <div id="preCanvas">
+              <img src="../img/frame.png" className="frame">
+
+              </img>
+              <div className="text">
+                <div className="reason">{value}</div>
+                <div className="why">{reason}</div>
+              </div>
+              <div className="text-foot">
+                #W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span>
+              </div>
+              <img src={imageToShow}
+                width={width}
+                height={height}
+                id="baseImage"
+                style={style}
+                />
+            </div>
+
             <div className="small-12 large-4 large-offset-2 cell">
-              <div className='live-wall-card big'>
+              <div id="preCanvas2">
+                <img src="../img/frame.png" className="frame">
+
+                </img>
                 <div className="text">
-                    <div className="reason">{value}</div>
-                    <div className="why">{reason}</div>
+                  <div className="reason">{value}</div>
+                  <div className="why">{reason}</div>
                 </div>
-                <div className="img" style={divStyle}>
+                <div className="text-foot">
+                  #W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span>
                 </div>
-                <div className="text">
-                  <img src="../img/WhayYourWhy-Logo.png"/>
-                </div>
+                <img src={imageToShow}
+                  width={width}
+                  height={height}
+                  id="baseImage2"
+                  style={style}
+                  />
               </div>
             </div>
             <div className="small-12 large-5  cell">
@@ -235,6 +334,8 @@ var AddReasonForm = React.createClass({
 
     return (
         <div id="add-reason-form">
+          <a onClick={this.genrateImage}>test</a>
+          {renderDownloadButton()}
           {renderForm()}
         </div>
     );

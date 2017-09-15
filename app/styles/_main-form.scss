@@ -115,7 +115,7 @@
         border-color: #d30f3e;
         @media screen and (max-width: $break-small) {
           margin-bottom: 15px;
-        }  
+        }
       }
     }
 
@@ -177,4 +177,74 @@
       margin: auto;
     }
   }
+}
+
+#preCanvas, #preCanvas2 {
+  width: 600px;
+  height: 592px;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: auto;
+  z-index: 99;
+  .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+  .text-foot {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    text-align: center;
+    font-size: 90px;
+    .text-small {
+      font-size: 72px !important;
+      zoom: unset!important;
+    }
+  }
+  .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    .reason {
+      font-size: 40px;
+      text-align: center;
+    }
+    .why {
+      text-align: center;
+      font-size: 70px;
+      margin-top: -30px;
+    }
+  }
+  .img {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+  }
+  .bg {
+    background: #fff;
+    width: 600px;
+    height: 592px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  #baseImage, #baseImage2 {
+    position: relative;
+  }
+
+}
+
+#preCanvas2 {
+  zoom: 0.5;
+  position: relative;
 }
