@@ -38,31 +38,7 @@ var AddReasonForm = React.createClass({
   },
   onFormSubmit: function(e) {
       e.preventDefault();
-      console.log(this.getCookie('userId'));
-      let data = new FormData();
-      data.append('file', this.state.file);
-      data.append('postId', this.getCookie('userId'));
-      data.append('reasonCode', this.state.value);
-      data.append('reasonPhrase', this.state.reason);
-
-
-      var that = this;
-      that.setState({
-        isLoading: true
-      })
-
-      services.postCampaign(data).then(function(data) {
-        that.setState({
-          isLoading: false,
-          isPost: true,
-          imageUrl: data.imagePath
-        })
-      }, function (e) {
-        alert('Unable to Posted');
-        that.setState({
-          isLoading: false
-        });
-      });
+      this.generateCanvas();
   },
   getCookie(cname) {
     var name = cname + "=";
@@ -105,8 +81,6 @@ var AddReasonForm = React.createClass({
                 height: img.height() * ratio
             });
 
-            this.generateCanvas();
-
       };
       reader.readAsDataURL(file);
   },
@@ -137,17 +111,47 @@ var AddReasonForm = React.createClass({
     let that = this;
         html2canvas($('#preCanvas'), {
             onrendered: function(canvas) {
+              var _that = that;
               canvas.toBlob(function(blob) {
                   console.log(blob);
                   var f = new File([blob], "filename.png");
                   console.log(f);
-                  that.setState({
-                      ...that.state,
+                  _that.setState({
                       imageToDownload: canvas.toDataURL('image/png'),
                       file: f
                   });
 
-                  location.href = '#preCanvas2';
+                  let data = new FormData();
+                  data.append('file', _that.state.file);
+                  data.append('postId', _that.getCookie('userId'));
+                  data.append('reasonCode', _that.state.value);
+                  data.append('reasonPhrase', _that.state.reason);
+
+                  var __that = _that;
+
+                  __that.setState({
+                    isLoading: true
+                  })
+
+                  var element = document.getElementById("main-form");
+                  element.scrollIntoView();
+
+                  services.postCampaign(data).then(function(data) {
+                    __that.setState({
+                      isLoading: false,
+                      isPost: true,
+                      imageUrl: data.imagePath
+                    })
+
+                    var element = document.getElementById("thank");
+                    element.scrollIntoView();
+
+                  }, function (e) {
+                    alert('Unable to Posted');
+                    __that.setState({
+                      isLoading: false
+                    });
+                  });
               });
 
             },
@@ -220,7 +224,7 @@ var AddReasonForm = React.createClass({
     console.log(canvasHeight, top);
 
     let style = {
-        top: 120,
+        top: width*120/600,
         left: 0
     };
 
@@ -252,6 +256,9 @@ var AddReasonForm = React.createClass({
                 <a href="#" className="button-line light" onClick={this.onClickShare}>แชร์ <img src="../img/fb-art.png"/></a>
               </div>
               <div className="small-12 large-6 cell">
+                <a href={imageToDownload} download={"image_AIA.png"} className="button-line light">บันทึกรูป</a>
+              </div>
+              <div className="small-12 cell">
                 <a href="#" className="button-line light" onClick={this.onClickPlayAgain}>เล่นอีกครั้ง</a>
               </div>
               <div className="small-12 cell">
@@ -380,8 +387,6 @@ var AddReasonForm = React.createClass({
 
     return (
         <div id="add-reason-form">
-          <a onClick={this.genrateImage}>test</a>
-          {renderDownloadButton()}
           {renderForm()}
         </div>
     );

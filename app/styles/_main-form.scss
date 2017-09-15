@@ -187,7 +187,7 @@
   left: 0;
   top: 0;
   margin: auto;
-  z-index: 99;
+  z-index: -99;
   .frame {
     position: absolute;
     top: 0;
@@ -242,9 +242,37 @@
     position: relative;
   }
 
+  @media screen and (max-width: $break-small) {
+    width: 320px;
+    height: 315px;
+    .text {
+      .reason {
+        font-size: 22px;
+      }
+      .why {
+        text-align: center;
+        font-size: 35px;
+        margin-top: -18px;
+      }
+    }
+    .text-foot {
+      font-size: 40px;
+      .text-small {
+        font-size: 32px !important;
+
+      }
+    }
+  }
+
+
 }
 
 #preCanvas2 {
   zoom: 0.5;
   position: relative;
+  left: 0;
+  z-index: 1;
+  @media screen and (max-width: $break-small) {
+    zoom: 1;
+  }
 }

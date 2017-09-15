@@ -3,6 +3,11 @@
 
 @import "how";
 
+body {
+  position: relative;
+  background: #fff;
+}
+
 #app {
   @import "table";
   @import "topbar";
@@ -17,6 +22,8 @@
   @import "live-wall";
   @import "footer";
   @import "add-reason-form";
+
+  background: #fff;
 
   .button-line {
     border: 1px solid $topbar-bg-color;
