@@ -147,7 +147,7 @@ var AddReasonForm = React.createClass({
                     element.scrollIntoView();
 
                   }, function (e) {
-                    alert('Unable to Posted');
+                    alert('Unable to Posted ' + e.message);
                     __that.setState({
                       isLoading: false
                     });
