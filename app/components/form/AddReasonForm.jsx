@@ -153,6 +153,9 @@ var AddReasonForm = React.createClass({
             },
         });
   },
+  replaceAt:function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+  },
   render: function() {
     var {textLeft,
       imagePath,
@@ -163,8 +166,51 @@ var AddReasonForm = React.createClass({
       imageToDownload,
       imageToShow, width, height, imageToDownload} = this.state;
 
-      var valueConvert = value;
-      var reasonConvert = reason;
+    var specialLetter = ['ุ',
+                          'ู',
+                          'ึ',
+                          'ํ',
+                          'ั',
+                          'ี',
+                          '๊',
+                          '็',
+                          '้',
+                          '่',
+                          '๋',
+                          'ิ',
+                          'ื',
+                          '์'];
+      var valueConvert = value.replace('ำ','ํา') + '.' ;
+      var reasonConvert = reason.replace('ำ','ํา') + '.';
+
+      var max = valueConvert.length;
+      var tmp = valueConvert;
+      for (var i = max; i > 0 ; i --) {
+        console.log(valueConvert[i] + " " + i + " " + specialLetter.indexOf(valueConvert[i]));
+        if (specialLetter.indexOf(valueConvert[i]) >= 0) {
+            var c = valueConvert[i];
+            tmp = tmp.substring(0, i) + tmp.substring(i+1, i+2) + c + tmp.substring(i+2, max);
+        }
+      }
+
+      valueConvert = tmp;
+      valueConvert = valueConvert.replace('.', ' ');
+
+      //============
+
+      tmp = reasonConvert;
+      for (var i = max; i > 0 ; i --) {
+        console.log(reasonConvert[i] + " " + i + " " + specialLetter.indexOf(reasonConvert[i]));
+        if (specialLetter.indexOf(reasonConvert[i]) >= 0) {
+            var c = reasonConvert[i];
+            tmp = tmp.substring(0, i) + tmp.substring(i+1, i+2) + c + tmp.substring(i+2, max);
+        }
+      }
+
+      reasonConvert = tmp;
+      reasonConvert = reasonConvert.replace('.', ' ');
+
+      //============
 
     let canvasHeight = $('#preCanvas').height();
     let top = (canvasHeight - height)/2;
@@ -240,8 +286,8 @@ var AddReasonForm = React.createClass({
 
               </img>
               <div className="text">
-                <div className="reason">{value}</div>
-                <div className="why">{reason}</div>
+                <div className="reason">{valueConvert}</div>
+                <div className="why">{reasonConvert}</div>
               </div>
               <div className="text-foot">
                 #W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span>
