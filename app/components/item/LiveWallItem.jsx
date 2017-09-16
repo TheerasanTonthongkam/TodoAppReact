@@ -6,8 +6,11 @@ var LiveWallItem = React.createClass({
       var divStyle = {
           backgroundImage: 'url(' + imagePath + ')',
           backgroundSize: 'cover',
-          backgroundPosition: '50%'
+          backgroundPosition: '50%',
+          marginLeft: '-10%',
+          minWidth: '220px'
       };
+
 
         return (
           <div className={'live-wall-card ' + css}>
