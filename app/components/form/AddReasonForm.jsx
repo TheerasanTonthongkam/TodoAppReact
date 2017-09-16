@@ -4,6 +4,7 @@ var Loading = require('Loading');
 var AutoComplete = require('react-autocomplete');
 var FormData = require('form-data');
 var {Link, IndexLink} = require('react-router');
+var DropDown = require('DropDown');
 
 var AddReasonForm = React.createClass({
   onClickPlayAgain: function(e) {
@@ -246,6 +247,9 @@ var AddReasonForm = React.createClass({
       this.setState({img3: 'active'});
     }
   },
+  onDataChange: function(data) {
+
+  },
   render: function() {
     var {textLeft,
       imagePath,
@@ -476,9 +480,10 @@ var AddReasonForm = React.createClass({
             </div>
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
-                <div className="auto-complete">
+                  <div className="auto-complete">
                   <input type="text" placeholder="เลือกกิจกรรมของคุณ" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
+                      id="auto-complete"
                       items={[
                         { id: '1', label: 'ออกกำลังกาย' },
                         { id: '2', label: 'ทานอาหารสุขภาพ' },
@@ -509,12 +514,13 @@ var AddReasonForm = React.createClass({
                       onSelect={value => this.setState({ value })}
                       wrapperStyle={{
                         display: 'block',
-                        width: '100%'
+                        width: '100%',
+                        position: 'absolute'
                       }}/>
                 </div>
 
                 <label style={{ marginTop: '20px' }}>เหตุผลของฉันคือ</label>
-                <textarea required placeholder="พิมพ์ที่นี่" maxLength="20" ref="message" name="reasonPhrase" onChange={this.onTextChange}></textarea>
+                <textarea id="textarea" required placeholder="พิมพ์ที่นี่" maxLength="20" ref="message" name="reasonPhrase" onChange={this.onTextChange}></textarea>
 
                 <div className="text-count">
                   {textLeft}
@@ -538,8 +544,19 @@ var AddReasonForm = React.createClass({
         </div>
     );
   },
+  handleScroll: function(e) {
+    $('#textarea').click();
+    var nodeCount = $('.auto-complete')[0].childNodes[1].childNodes.length;
+    if (nodeCount == 2) {
+      $('.auto-complete')[0].childNodes[1].childNodes[1].style.left = '10000px';
+    }
+    console.log("scroll " + $('.auto-complete')[0].childNodes[1].childNodes.length);
+  },
+  componentWillUnmount: function() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   componentDidMount: function () {
-
+    window.addEventListener('scroll', this.handleScroll);
   }
 });
 

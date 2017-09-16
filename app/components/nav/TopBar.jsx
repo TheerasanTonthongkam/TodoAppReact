@@ -39,8 +39,10 @@ var TopBar = React.createClass({
 
     var {id} = this.state;
     var that = this;
+    var urlIs = "userId="
     var renderLogout = () => {
       if (id > 1) {
+        urlIs = urlIs + id;
         return (<li><a className="sub-menu out"><img onClick={this.clickLogout} img src="../img/ic_logout.png"></img></a></li>)
       }
     }
@@ -50,7 +52,7 @@ var TopBar = React.createClass({
         <img id="logo" className="logo" src="../img/logo_aia.png"/>
         <ul id="desktop-menu" className="menu align-right show-for-large" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
           <li><a id="d-content" href="#body-content" data-smooth-scroll data-animation-easing="swing" data-threshold="0">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
-          <li><a href="#main-form">ร่วมกิจกรรม</a></li>
+          <li><a href={"#main-form"}>ร่วมกิจกรรม</a></li>
           <li><a href="#reward">รางวัล</a></li>
           <li><a href="#live-wall">ดู Live Wall</a></li>
           <li><a className="mail" onClick={this.clickLogout} target="_blank" href="http://www.aia.com/en/about-aia/contact-us.html" ><img src="../img/mail.png"/></a></li>
@@ -108,9 +110,14 @@ var TopBar = React.createClass({
     var elem = new Foundation.SmoothScroll($('#up-button'), null);
     var elem = new Foundation.DropdownMenu($('#phone-menu'), null);
 
+    var id = this.getCookie('userId');
+    var params = "";
+    if (id > 0) {
+      params = "userId=" + id;
+    }
 
     $('.mail').click(function() {
-      window.open("http://www.aia.com/en/about-aia/contact-us.html");
+      window.open("http://www.aia.com/en/about-aia/contact-us.html?" + params);
     });
 
     var that = this;
@@ -120,7 +127,7 @@ var TopBar = React.createClass({
       if (location.origin.indexOf('?') >= 0) {
         connect = "&"
       }
-      location.href = location.origin + connect + "logout=true";
+      location.href = location.origin + connect + "logout=true&" + params;
     });
 
   }
