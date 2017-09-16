@@ -40,6 +40,15 @@ var LoginForm = React.createClass({
       var that = this;
       services.register(data).then(function(data) {
         that.props.onGetUser(data);
+
+        var url = location.href.replace(location.hash, '');
+        var connect = "?";
+        if (url.indexOf('?') >= 0) {
+          connect = "&"
+        }
+
+        location.href = url + connect + "login=true";
+
       }, function (e) {
         alert('Unable to sign in');
       });
@@ -58,6 +67,13 @@ var LoginForm = React.createClass({
         services.login(data).then(function(data) {
           console.log("Registered");
           that.props.onGetUser(data);
+          var url = location.href.replace(location.hash, '');
+          var connect = "?";
+          if (url.indexOf('?') >= 0) {
+            connect = "&"
+          }
+
+          location.href = url + connect + "login=true";
         }, function (e) {
           alert('Unable to sign in');
         });

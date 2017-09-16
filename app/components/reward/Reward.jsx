@@ -34,7 +34,7 @@ var Reward = React.createClass({
         {renderHowTo()}
         <div id="reward">
             <h2>ของรางวัล</h2>
-            <p>รวมกว่า 800 รางวัล รวมมูลค่ากว่า <strong>500,000</strong> บาท</p>
+            <p>800 รางวัล รวมมูลค่ากว่า <strong>500,000</strong> บาท</p>
               <div className="grid-x">
                 <div className="medium-12 large-6 columns">
                   <div className="reward-card big">
@@ -75,7 +75,7 @@ var Reward = React.createClass({
                       <div className="reward-card">
                         <img src="../img/prize-4D.png"/>
                         <h3>ของที่ระลึกจาก AIA VITALITY</h3>
-                        <h4>รางวัลละ 200 บาท</h4>
+                        <h4></h4>
                         <div>500 รางวัล</div>
                       </div>
                     </div>
@@ -83,7 +83,7 @@ var Reward = React.createClass({
                 </div>
               </div>
               <br/>
-              <p>และรางวัลอื่นๆเพิ่มเติมอีกมากมาย</p>
+              
         </div>
 
         <a onClick={this.onClickHowTo} className="button-line">เงื่อนไขและกติกาการร่วมสนุก</a>
