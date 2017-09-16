@@ -17,7 +17,10 @@ var AddReasonForm = React.createClass({
       isLoading: false,
       isPost: false,
       imageUrl: '',
-      imageToShow: ''
+      imageToShow: '../img/preview_1.jpg',
+      img1: '',
+      img2: 'active',
+      img3: ''
     });
   },
   onClickShare: function(e) {
@@ -68,7 +71,10 @@ var AddReasonForm = React.createClass({
             imagePath: reader.result,
             imageToShow: reader.result,
             width: img.width() * ratio,
-            height: img.height() * ratio
+            height: img.height() * ratio,
+            img1: '',
+            img2: '',
+            img3: ''
           });
 
           ratio = preCanvas.width() / img.width();
@@ -103,8 +109,12 @@ var AddReasonForm = React.createClass({
       isPost: false,
       imageUrl: '',
       imageToDownload: '',
+      imageToShow: '../img/preview_1.jpg',
       width:1400,
-      height:1184
+      height:1184,
+      img1: '',
+      img2: 'active',
+      img3: ''
     };
   },
   generateCanvas: function() {
@@ -160,6 +170,28 @@ var AddReasonForm = React.createClass({
   replaceAt:function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
   },
+  selectImage: function(e) {
+    e.preventDefault();
+    console.log(e.target.getAttribute("data-value"));
+    this.setState({
+      imageToShow: e.target.src,
+      img1: '',
+      img2: '',
+      img3: ''
+    });
+
+    if (e.target.getAttribute("data-value") == 1 ) {
+      this.setState({img1: 'active'});
+    }
+
+    if (e.target.getAttribute("data-value") == 2 ) {
+      this.setState({img2: 'active'});
+    }
+
+    if (e.target.getAttribute("data-value") == 3 ) {
+      this.setState({img3: 'active'});
+    }
+  },
   render: function() {
     var {textLeft,
       imagePath,
@@ -168,7 +200,8 @@ var AddReasonForm = React.createClass({
       isLoading,
       isPost,
       imageToDownload,
-      imageToShow, width, height, imageToDownload} = this.state;
+      imageToShow, width, height, imageToDownload,
+      img1, img2, img3} = this.state;
 
     var specialLetter = ['ุ',
                           'ู',
@@ -200,9 +233,8 @@ var AddReasonForm = React.createClass({
       valueConvert = tmp;
       valueConvert = valueConvert.replace('.', ' ');
 
-      //============
-
       tmp = reasonConvert;
+      var max = reasonConvert.length;
       for (var i = max; i > 0 ; i --) {
         console.log(reasonConvert[i] + " " + i + " " + specialLetter.indexOf(reasonConvert[i]));
         if (specialLetter.indexOf(reasonConvert[i]) >= 0) {
@@ -214,8 +246,6 @@ var AddReasonForm = React.createClass({
       reasonConvert = tmp;
       reasonConvert = reasonConvert.replace('.', ' ');
 
-      //============
-
     let canvasHeight = $('#preCanvas').height();
     let top = (canvasHeight - height)/2;
     if (top < 0) {
@@ -223,8 +253,14 @@ var AddReasonForm = React.createClass({
     }
     console.log(canvasHeight, top);
 
+    var defaultTop = 50;
+
+    if ($('#preCanvas2').width() < 400) {
+      defaultTop = 30;
+    }
+
     let style = {
-        top: width*120/600,
+        top: defaultTop,
         left: 0
     };
 
@@ -326,6 +362,25 @@ var AddReasonForm = React.createClass({
                   style={style}
                   />
               </div>
+
+              <div id="select-image" className="grid-x grid-margin-x">
+                <div className="small-4 cell">
+                  <a className={img1} onClick={this.selectImage} ref="a1">
+                    <img src="../img/preview_2.jpg" data-value="1"/>
+                  </a>
+
+                </div>
+                <div className="small-4 cell">
+                  <a className={img2} onClick={this.selectImage} ref="a2">
+                    <img src="../img/preview_1.jpg" data-value="2"/>
+                  </a>
+                </div>
+                <div className="small-4 cell">
+                  <a className={img3} onClick={this.selectImage} ref="a3">
+                    <img src="../img/preview_3.jpg" data-value="3"/>
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
@@ -373,8 +428,8 @@ var AddReasonForm = React.createClass({
                   {textLeft}
                 </div>
 
-                <a href="#" className="button-line gray file expanded">อัปโหลดรูป
-                  <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} required/>
+                <a className="button-line gray file expanded">อัปโหลดรูป
+                  <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} />
                 </a>
 
                 <button type="submit" className="button-line expanded" >SUBMIT</button>
