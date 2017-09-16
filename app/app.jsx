@@ -25,6 +25,7 @@ ReactDOM.render(
           <IndexRoute component={BlogList}/>
           <Route path="*" component={BlogDetail}/>
       </Route>
+      <Route path="*" component={Main}/>
     </Route>
   </Router>,
   document.getElementById("app")

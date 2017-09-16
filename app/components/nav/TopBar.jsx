@@ -2,7 +2,7 @@ var React = require('react');
 var {Link, IndexLink} = require('react-router');
 
 var TopBar = React.createClass({
-  clickLogout: function() {
+  clickLogout: function(e) {
     e.preventDefault();
     alert("out");
   },
@@ -47,9 +47,9 @@ var TopBar = React.createClass({
 
     return (
       <div id="main-menu-container">
-        <img id="logo" src="../img/logo_aia.png"/>
+        <img id="logo" className="logo" src="../img/logo_aia.png"/>
         <ul id="desktop-menu" className="menu align-right show-for-large" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
-          <li><a href="#body-content">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
+          <li><a id="d-content" href="#body-content" data-smooth-scroll data-animation-easing="swing" data-threshold="0">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
           <li><a href="#main-form">ร่วมกิจกรรม</a></li>
           <li><a href="#reward">รางวัล</a></li>
           <li><a href="#live-wall">ดู Live Wall</a></li>
@@ -58,11 +58,11 @@ var TopBar = React.createClass({
         </ul>
         <ul id="phone-menu" className="menu align-right hide-for-large dropdown" data-dropdown-menu>
           <li>
-            <a href="#">
+            <a href="#" className="img-logo out">
               <img src="../img/ic_menu.png"/>
             </a>
             <ul id="phone-menu-list" className="menu" data-smooth-scroll data-animation-easing="swing" data-threshold="0">
-                <li><a className="sub-menu" href="#body-content">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
+                <li><a id="m-content" className="sub-menu" href="#body-content" data-smooth-scroll data-animation-easing="swing" data-threshold="0">#W<span className="text-small">hats</span>Y<span className="text-small">our</span>W<span className="text-small">hy</span></a></li>
                 <li><a className="sub-menu" href="#main-form">ร่วมกิจกรรม</a></li>
                 <li><a className="sub-menu" href="#reward">รางวัล</a></li>
                 <li><a className="sub-menu" href="#live-wall">ดู Live Wall</a></li>
@@ -88,10 +88,25 @@ var TopBar = React.createClass({
       location.href = location.origin + path;
     }
 
+    $('#logo').click(function() {
+      var p = "";
+      if (location.href.indexOf('whatsyourwhy') > 0) {
+        p= "/whatsyourwhy";
+      }
+      location.href = location.origin + p;
+    });
+
+    if (this.props.home == true) {
+      var elem = new Foundation.SmoothScroll($('#desktop-menu'), null);
+      var elem = new Foundation.SmoothScroll($('#phone-menu-list'), null);
+      var elem = new Foundation.SmoothScroll($('#main-menu-container'), null);
+    } else {
+      var elem = new Foundation.SmoothScroll($('#d-content'), null);
+      var elem = new Foundation.SmoothScroll($('#m-content'), null);
+    }
+
     var elem = new Foundation.DropdownMenu($('#phone-menu'), null);
-    var elem = new Foundation.SmoothScroll($('#desktop-menu'), null);
-    var elem = new Foundation.SmoothScroll($('#phone-menu-list'), null);
-    var elem = new Foundation.SmoothScroll($('#main-menu-container'), null);
+
 
     $('.mail').click(function() {
       window.open("http://www.aia.com/en/about-aia/contact-us.html");
@@ -99,15 +114,14 @@ var TopBar = React.createClass({
 
     var that = this;
     $('.out').click(function() {
-      alert("123");
       document.cookie = 'userId=' + 'expires=Thu, 01 Jan 1970 00:00:01 GMT;';
       var connect = "?";
       if (location.origin.indexOf('?') >= 0) {
         connect = "&"
       }
-
       location.href = location.origin + connect + "logout=true";
     });
+
   }
 });
 

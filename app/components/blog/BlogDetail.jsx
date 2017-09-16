@@ -2,6 +2,8 @@ var React = require('react');
 var Item = require('Item');
 var services = require('Services');
 var Loading = require('Loading');
+var WhatsYourWhy = require('WhatsYourWhy');
+var Blog = require('Blog');
 
 var BlogDetail = React.createClass({
   getInitialState: function() {
@@ -29,12 +31,20 @@ var BlogDetail = React.createClass({
     return (
       <div id="blog">
           <h2>Detail</h2>
+
+
+            <div className="red-line"></div>
+            <WhatsYourWhy home={true}/>
+            <Blog home={true}/>
       </div>
     )
 
   },
   componentDidMount: function() {
-    {this.getList()}
+    window.scrollTo(0, 0);
+  },
+  componentWillUnmount: function() {
+    window.scrollTo(0, 0);
   }
 });
 

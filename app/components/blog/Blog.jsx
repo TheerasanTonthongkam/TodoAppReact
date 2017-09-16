@@ -30,6 +30,18 @@ var Blog = React.createClass({
       var {isLoading, data} = this.state;
       var {home} = this.props;
 
+      var style = {};
+
+      if (home !== true) {
+        style = {
+          textAlign : 'center'
+        };
+      }
+
+      if (home) {
+        data = data.slice(0,3);
+      }
+
       var renderButton = () => {
         if (home === true) {
           return (<Link to="/blog" className="button-line" maintainScrollPosition={true}>ดูบทความทั้งหมด</Link>)
@@ -39,7 +51,7 @@ var Blog = React.createClass({
       if (isLoading) {
         return (
           <div id="blog">
-              <h2>ทำ "อย่างไร" ให้สุขภาพดี</h2>
+              <h2 style={style}>ทำ "อย่างไร" ให้สุขภาพดี</h2>
                 <div className="grid-x grid-margin-x">
                   <Loading />
                 </div>
@@ -54,7 +66,7 @@ var Blog = React.createClass({
 
         return (
           <div id="blog">
-              <h2>ทำ "อย่างไร" ให้สุขภาพดี</h2>
+              <h2 style={style}>ทำ "อย่างไร" ให้สุขภาพดี</h2>
                 <div className="grid-x grid-margin-x">
                   {renderList()}
                 </div>

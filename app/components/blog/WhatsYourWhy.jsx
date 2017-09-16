@@ -5,7 +5,6 @@ var Loading = require('Loading');
 var {Link, IndexLink} = require('react-router');
 
 var WhatsYourWhy = React.createClass({
-
   getInitialState: function() {
     return {
       isLoading: true,
@@ -30,6 +29,21 @@ var WhatsYourWhy = React.createClass({
   render: function() {
       var {isLoading, data} = this.state;
       var {home} = this.props;
+      var style = {};
+      var firstBlog = {};
+
+      if (home !== true) {
+        style = {
+          textAlign : 'center'
+        };
+      }
+
+      if (home) {
+        data = data.slice(0,3);
+      } else {
+        firstBlog = data[0];
+        data = data.slice(1);
+      }
 
       var renderButton = () => {
         if (home === true) {
@@ -37,10 +51,37 @@ var WhatsYourWhy = React.createClass({
         }
       }
 
+      var renderFirstBlog = () => {
+        if (home !== true) {
+          var divStyle = {
+              backgroundImage: 'url(' + firstBlog.imagePath + ')',
+              backgroundSize: 'cover',
+              backgroundPosition: '50%',
+              height: '245px'
+          };
+          return (
+            <Link to={`/blog/${firstBlog.id}`}>
+              <div className="grid-x grid-margin-x">
+                  <div className="small-12 large-6 large-offset-1 cell">
+                    <div style={divStyle} className="banner"></div>
+                  </div>
+                  <div className="small-12 large-5 cell">
+                    <h4>
+                      {firstBlog.title}
+                    </h4>
+                    <p>{firstBlog.description}</p>
+                  </div>
+              </div>
+              <div className="grid-spacing"></div>
+            </Link>
+          )
+        }
+      }
+
       if (isLoading) {
         return (
           <div id="whats-your-why">
-              <h2>พบกับ #whatsyourwhy ของคนดัง</h2>
+              <h2 style={style}>พบกับ #whatsyourwhy ของคนดัง</h2>
                 <div className="grid-x grid-margin-x">
                   <Loading />
                 </div>
@@ -55,11 +96,15 @@ var WhatsYourWhy = React.createClass({
 
         return (
           <div id="blog">
-              <h2>พบกับ #whatsyourwhy ของคนดัง</h2>
+              <h2 style={style}>พบกับ #whatsyourwhy ของคนดัง</h2>
+
+                {renderFirstBlog()}
+
                 <div className="grid-x grid-margin-x">
+
                   {renderList()}
                 </div>
-                {renderButton()}
+                
           </div>
         )
       }

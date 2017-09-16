@@ -17,7 +17,9 @@ var Body = React.createClass({
     );
   },
   componentDidMount: function () {
-    var elem = new Foundation.SmoothScroll($('#img-banner'), null);
+    if (this.props.home === true) {
+      var elem = new Foundation.SmoothScroll($('#img-banner'), null);
+    }
   }
 });
 

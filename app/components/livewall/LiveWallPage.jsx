@@ -91,7 +91,7 @@ var LiveWall = React.createClass({
 },
   componentWillUnmount: function() {
     window.scrollTo(0, 0);
-      window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 });
 

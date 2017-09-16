@@ -39,7 +39,9 @@ var BodyContent = React.createClass({
     );
   },
   componentDidMount: function () {
-    var elem = new Foundation.SmoothScroll($('#join-btn'), null);
+    if (this.props.home == true) {
+      var elem = new Foundation.SmoothScroll($('#join-btn'), null);
+    }
   }
 });
 
