@@ -1,7 +1,4 @@
 var React = require('react');
-var Item = require('Item');
-var services = require('Services');
-var Loading = require('Loading');
 var WhatsYourWhy = require('WhatsYourWhy');
 var Blog = require('Blog');
 
@@ -20,6 +17,7 @@ var BlogList = React.createClass({
   },
   componentDidMount: function() {
     window.scrollTo(0, 0);
+    console.log('ddd');
   },
   componentWillUnmount: function() {
     window.scrollTo(0, 0);

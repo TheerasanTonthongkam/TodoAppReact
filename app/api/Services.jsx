@@ -16,16 +16,24 @@ module.exports = {
     return axios.get(requestUrl).then(function(res) {
       return res.data
     }, function (err) {
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to get Live wall');
     });
   },
 
+  getBlogFromId: function(id) {
+    var requestUrl = `${END_POINT}${BLOG}/${id}`;
+    return axios.get(requestUrl).then(function(res) {
+      return res.data
+    }, function (err) {
+      throw new Error('Unable to get Blog ' + id);
+    });
+  },
   getBlog: function () {
     var requestUrl = `${END_POINT}${BLOG}`;
     return axios.get(requestUrl).then(function(res) {
       return res.data
     }, function (err) {
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to get all Blogs');
     });
   },
 
@@ -34,7 +42,7 @@ module.exports = {
     return axios.get(requestUrl).then(function(res) {
       return res.data
     }, function (err) {
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to get Famous Blogs');
     });
   },
 
@@ -43,7 +51,7 @@ module.exports = {
     return axios.get(requestUrl).then(function(res) {
       return res.data
     }, function (err) {
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to get Livewall');
     });
   },
 
@@ -53,7 +61,7 @@ module.exports = {
       return res.data
     }, function (err) {
       console.log(err);
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to register');
     });
   },
 
@@ -63,7 +71,7 @@ module.exports = {
       return res.data
     }, function (err) {
       console.log(err);
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to login');
     });
   },
 
@@ -79,7 +87,7 @@ module.exports = {
     }, function (err) {
       alert(err.message);
       console.log(err);
-      throw new Error('Unable to fetch weather for that location');
+      throw new Error('Unable to Post ' + err);
     });
   }
 }

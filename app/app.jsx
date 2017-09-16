@@ -23,7 +23,7 @@ ReactDOM.render(
       <Route path="livewall" component={LiveWallPage}/>
       <Route path="blog" component={MainBlog}>
           <IndexRoute component={BlogList}/>
-          <Route path="*" component={BlogDetail}/>
+          <Route path=":id" component={BlogDetail}/>
       </Route>
       <Route path="*" component={Main}/>
     </Route>

@@ -1,5 +1,6 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
+var striptags = require('striptags');
 
 var Item = React.createClass({
     render: function() {
@@ -14,6 +15,8 @@ var Item = React.createClass({
               backgroundPosition: '50%'
           };
 
+          description = striptags(description);
+
           var link = `/blog/${id}`
 
         return (
@@ -23,13 +26,21 @@ var Item = React.createClass({
                 <div className="wrapper">
                   <div style={divStyle} className="banner"></div>
                   <div className="spacing"></div>
-                  {title}<br/>
-                  {description}
+                  <p>{title}</p>
+                  <p>{description}</p>
                 </div>
               </div>
             </Link>
           </div>
         );
+    },
+    componentDidMount: function() {
+      var {id,
+          description} = this.props;
+          var elem = $(`#content-${id}`);
+
+          elem.innerHTML = description;
+          elem.text( elem.textContent || elem.innerText || "");
     }
 });
 

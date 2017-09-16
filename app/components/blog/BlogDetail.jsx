@@ -9,30 +9,48 @@ var BlogDetail = React.createClass({
   getInitialState: function() {
     return {
       isLoading: true,
-      data: []
+      data: [],
+      id: ''
     };
   },
-  getDefaultProps: function() {
-    return {
-      isLoading: true,
-      data: []
-    };
-  },
-  getList: function() {
+  getBlogFromId: function(id) {
     var that = this;
-    services.getBlog().then(function (data) {
+    services.getBlogFromId(id).then(function (data) {
       that.setState({
         data: data,
+        isLoading: false
+      });
+
+      $('#content').html(data.description);
+      window.scrollTo(0,0);
+    }, function (e) {
+      alert('Unable to Load  ' + e);
+      that.setState({
         isLoading: false
       });
     });
   },
   render: function() {
+    var {data, isLoading, imagePath, id} = this.state;
+    console.log(id);
+    var renderContent = () => {
+      if (isLoading) {
+        return (<Loading/>)
+      } else {
+        return (
+          <div>
+            <div id="content"></div>
+            <div id="break" style={{clear:'both'}}></div>
+          </div>
+        )
+      }
+    }
+
     return (
       <div id="blog">
-          <h2>Detail</h2>
-
-
+          <img src={data.imagePath}></img>
+          <h2 style={{color: '#000'}}>{data.title}</h2>
+            {renderContent()}
             <div className="red-line"></div>
             <WhatsYourWhy home={true}/>
             <Blog home={true}/>
@@ -40,11 +58,19 @@ var BlogDetail = React.createClass({
     )
 
   },
+  componentWillReceiveProps: function() {
+    var id = location.href.split('#/blog/')[1].split('?')[0];
+    if (id > 0) {
+      this.getBlogFromId(id);
+    }
+  },
   componentDidMount: function() {
     window.scrollTo(0, 0);
-  },
-  componentWillUnmount: function() {
-    window.scrollTo(0, 0);
+    console.log("did mount" + this.props.params.id);
+    if (this.props.params.id > 0) {
+      this.getBlogFromId(this.props.params.id);
+    }
+
   }
 });
 

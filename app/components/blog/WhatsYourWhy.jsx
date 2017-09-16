@@ -3,6 +3,7 @@ var Item = require('Item');
 var services = require('Services');
 var Loading = require('Loading');
 var {Link, IndexLink} = require('react-router');
+var striptags = require('striptags');
 
 var WhatsYourWhy = React.createClass({
   getInitialState: function() {
@@ -32,6 +33,7 @@ var WhatsYourWhy = React.createClass({
       var style = {};
       var firstBlog = {};
 
+
       if (home !== true) {
         style = {
           textAlign : 'center'
@@ -59,6 +61,9 @@ var WhatsYourWhy = React.createClass({
               backgroundPosition: '50%',
               height: '245px'
           };
+          var firstDes = "";
+          firstDes = striptags(firstBlog.description);
+
           return (
             <Link to={`/blog/${firstBlog.id}`}>
               <div className="grid-x grid-margin-x">
@@ -69,7 +74,7 @@ var WhatsYourWhy = React.createClass({
                     <h4>
                       {firstBlog.title}
                     </h4>
-                    <p>{firstBlog.description}</p>
+                    <p className="top-des">{firstDes}</p>
                   </div>
               </div>
               <div className="grid-spacing"></div>
@@ -104,7 +109,7 @@ var WhatsYourWhy = React.createClass({
 
                   {renderList()}
                 </div>
-                
+
           </div>
         )
       }

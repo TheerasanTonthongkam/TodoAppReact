@@ -105,6 +105,7 @@ var TopBar = React.createClass({
       var elem = new Foundation.SmoothScroll($('#m-content'), null);
     }
 
+    var elem = new Foundation.SmoothScroll($('#up-button'), null);
     var elem = new Foundation.DropdownMenu($('#phone-menu'), null);
 
 

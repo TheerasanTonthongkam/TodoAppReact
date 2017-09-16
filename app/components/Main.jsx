@@ -46,6 +46,11 @@ var Main = React.createClass({
       tag = "#live-wall";
     }
 
+    if (url.indexOf('video') > 0) {
+      console.log($('#video').position().top);
+      tag = "#video";
+    }
+
     if (tag !== '#app') {
       setTimeout(function() {
         window.scrollTo(0, $(tag).position().top);
@@ -53,7 +58,7 @@ var Main = React.createClass({
       }, 2000);
     }
 
-    
+
   }
 });
 
