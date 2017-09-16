@@ -5,6 +5,9 @@ var Main = require('Main');
 var Communication = require('Communication');
 var Employee = require('Employee');
 var LiveWallPage = require('LiveWallPage');
+var BlogList = require('BlogList');
+var BlogDetail = require('BlogDetail');
+var MainBlog = require('MainBlog');
 
 // Load foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
@@ -18,6 +21,10 @@ ReactDOM.render(
     <Route path="/">
       <IndexRoute component={Main}/>
       <Route path="livewall" component={LiveWallPage}/>
+      <Route path="blog" component={MainBlog}>
+          <IndexRoute component={BlogList}/>
+          <Route path="*" component={BlogDetail}/>
+      </Route>
     </Route>
   </Router>,
   document.getElementById("app")

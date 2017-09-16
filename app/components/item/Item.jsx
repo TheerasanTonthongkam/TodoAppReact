@@ -1,7 +1,10 @@
 var React = require('react');
+var {Link, IndexLink} = require('react-router');
+
 var Item = React.createClass({
     render: function() {
-      var {title,
+      var {id,
+          title,
           description,
           imagePath} = this.props;
 
@@ -11,16 +14,20 @@ var Item = React.createClass({
               backgroundPosition: '50%'
           };
 
+          var link = `/blog/${id}`
+
         return (
           <div className="small-12 large-4 cell">
-            <div className="card">
-              <div className="wrapper">
-                <div style={divStyle} className="banner"></div>
-                <div className="spacing"></div>
-                {title}<br/>
-                {description}
+            <Link to={link}>
+              <div className="card">
+                <div className="wrapper">
+                  <div style={divStyle} className="banner"></div>
+                  <div className="spacing"></div>
+                  {title}<br/>
+                  {description}
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         );
     }

@@ -90,6 +90,7 @@
     position: fixed;
     right: 40px;
     bottom: 40px;
+    z-index: 99;
     @media screen and (max-width: $break-small) {
       zoom: 0.5;
       z-index: 9;

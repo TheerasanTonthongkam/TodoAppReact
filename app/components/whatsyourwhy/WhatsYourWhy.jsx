@@ -2,6 +2,7 @@ var React = require('react');
 var Item = require('Item');
 var services = require('Services');
 var Loading = require('Loading');
+var {Link, IndexLink} = require('react-router');
 
 var WhatsYourWhy = React.createClass({
 
@@ -28,6 +29,13 @@ var WhatsYourWhy = React.createClass({
   },
   render: function() {
       var {isLoading, data} = this.state;
+      var {home} = this.props;
+
+      var renderButton = () => {
+        if (home === true) {
+          return (<Link to="/blog" className="button-line" maintainScrollPosition={true}>ดูบทความทั้งหมด</Link>)
+        }
+      }
 
       if (isLoading) {
         return (
@@ -51,6 +59,7 @@ var WhatsYourWhy = React.createClass({
                 <div className="grid-x grid-margin-x">
                   {renderList()}
                 </div>
+                {renderButton()}
           </div>
         )
       }
