@@ -7,6 +7,10 @@ var {Link, IndexLink} = require('react-router');
 
 var AddReasonForm = React.createClass({
   onClickPlayAgain: function(e) {
+    var defaultTop = 50;
+    if ($('#preCanvas2').width() < 400) {
+      defaultTop = 30;
+    }
     e.preventDefault();
     this.setState({
       file: '',
@@ -20,7 +24,10 @@ var AddReasonForm = React.createClass({
       imageToShow: '../img/preview_1.jpg',
       img1: '',
       img2: 'active',
-      img3: ''
+      img3: '',
+      top: defaultTop,
+      left: 0,
+      rotate: 0
     });
   },
   onClickShare: function(e) {
@@ -99,6 +106,11 @@ var AddReasonForm = React.createClass({
     });
   },
   getInitialState: function() {
+    var defaultTop = 50;
+    if ($('#preCanvas2').width() < 400) {
+      defaultTop = 30;
+    }
+
     return {
       file: '',
       value: '',
@@ -114,7 +126,10 @@ var AddReasonForm = React.createClass({
       height:1184,
       img1: '',
       img2: 'active',
-      img3: ''
+      img3: '',
+      top: defaultTop,
+      left: 0,
+      rotate: 0
     };
   },
   generateCanvas: function() {
@@ -170,6 +185,34 @@ var AddReasonForm = React.createClass({
   replaceAt:function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
   },
+  adjustImage: function(e) {
+    e.preventDefault();
+    var v = e.target.getAttribute("data-value");
+    var {top, left, rotate} = this.state;
+    if (v == 1) {
+      left = left - 10;
+    }
+    if (v == 2) {
+      left = left + 10;
+    }
+
+    if (v == 3) {
+      top = top - 10;
+    }
+
+    if (v == 4) {
+      top = top + 10;
+    }
+    if (v == 5) {
+      rotate = rotate - 90;
+    }
+
+    this.setState({
+      top: top,
+      left: left,
+      rotate: rotate
+    })
+  },
   selectImage: function(e) {
     e.preventDefault();
     console.log(e.target.getAttribute("data-value"));
@@ -201,7 +244,10 @@ var AddReasonForm = React.createClass({
       isPost,
       imageToDownload,
       imageToShow, width, height, imageToDownload,
-      img1, img2, img3} = this.state;
+      img1, img2, img3,
+      top,
+      left,
+      rotate} = this.state;
 
     var specialLetter = ['ุ',
                           'ู',
@@ -247,10 +293,7 @@ var AddReasonForm = React.createClass({
       reasonConvert = reasonConvert.replace('.', ' ');
 
     let canvasHeight = $('#preCanvas').height();
-    let top = (canvasHeight - height)/2;
-    if (top < 0) {
-        top = 0;
-    }
+
     console.log(canvasHeight, top);
 
     var defaultTop = 50;
@@ -260,8 +303,9 @@ var AddReasonForm = React.createClass({
     }
 
     let style = {
-        top: defaultTop,
-        left: 0
+        top: top,
+        left: left,
+        transform: `rotate(${rotate}deg)`
     };
 
 
@@ -364,6 +408,36 @@ var AddReasonForm = React.createClass({
               </div>
 
               <div id="select-image" className="grid-x grid-margin-x">
+                <div className="small-2 small-offset-1 cell">
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_move_left.png" data-value="1"/>
+                  </a>
+                </div>
+                <div className="small-2 cell">
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_move_right.png" data-value="2"/>
+                  </a>
+                </div>
+                <div className="small-2 cell">
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_move_up.png" data-value="3"/>
+                  </a>
+                </div>
+                <div className="small-2 cell">
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_move_down.png" data-value="4"/>
+                  </a>
+                </div>
+                <div className="small-2 cell">
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_rotate.png" data-value="5"/>
+                  </a>
+                </div>
+
+                <div className="small-12 cell">
+                  <br/>
+                </div>
+
                 <div className="small-4 cell">
                   <a className={img1} onClick={this.selectImage} ref="a1">
                     <img src="../img/preview_2.jpg" data-value="1"/>
