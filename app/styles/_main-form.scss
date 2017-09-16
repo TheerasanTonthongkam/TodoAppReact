@@ -243,6 +243,8 @@
 
   #baseImage, #baseImage2 {
     position: relative;
+    max-width: 1000px;
+    width: 100%;
   }
 
   @media screen and (max-width: $break-small) {

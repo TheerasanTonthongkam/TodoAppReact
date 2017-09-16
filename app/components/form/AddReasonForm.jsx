@@ -27,7 +27,8 @@ var AddReasonForm = React.createClass({
       img3: '',
       top: defaultTop,
       left: 0,
-      rotate: 0
+      rotate: 0,
+      zoom: 100
     });
   },
   onClickShare: function(e) {
@@ -129,7 +130,8 @@ var AddReasonForm = React.createClass({
       img3: '',
       top: defaultTop,
       left: 0,
-      rotate: 0
+      rotate: 0,
+      zoom: 100
     };
   },
   generateCanvas: function() {
@@ -188,7 +190,7 @@ var AddReasonForm = React.createClass({
   adjustImage: function(e) {
     e.preventDefault();
     var v = e.target.getAttribute("data-value");
-    var {top, left, rotate} = this.state;
+    var {top, left, rotate, zoom} = this.state;
     if (v == 1) {
       left = left - 10;
     }
@@ -207,10 +209,19 @@ var AddReasonForm = React.createClass({
       rotate = rotate - 90;
     }
 
+    if (v == 6) {
+      zoom = zoom + 10;
+    }
+
+    if (v == 7 && zoom > 50) {
+      zoom = zoom - 10;
+    }
+
     this.setState({
       top: top,
       left: left,
-      rotate: rotate
+      rotate: rotate,
+      zoom: zoom
     })
   },
   selectImage: function(e) {
@@ -247,7 +258,8 @@ var AddReasonForm = React.createClass({
       img1, img2, img3,
       top,
       left,
-      rotate} = this.state;
+      rotate,
+    zoom} = this.state;
 
     var specialLetter = ['ุ',
                           'ู',
@@ -305,7 +317,8 @@ var AddReasonForm = React.createClass({
     let style = {
         top: top,
         left: left,
-        transform: `rotate(${rotate}deg)`
+        transform: `rotate(${rotate}deg)`,
+        width: `${zoom}%`
     };
 
 
@@ -408,24 +421,29 @@ var AddReasonForm = React.createClass({
               </div>
 
               <div id="select-image" className="grid-x grid-margin-x">
-                <div className="small-2 small-offset-1 cell">
+                <div className="small-3 small-offset-1 cell">
                   <a onClick={this.adjustImage}>
                     <img src="../img/ic_move_left.png" data-value="1"/>
                   </a>
-                </div>
-                <div className="small-2 cell">
                   <a onClick={this.adjustImage}>
                     <img src="../img/ic_move_right.png" data-value="2"/>
                   </a>
                 </div>
-                <div className="small-2 cell">
+
+                <div className="small-3 cell">
                   <a onClick={this.adjustImage}>
                     <img src="../img/ic_move_up.png" data-value="3"/>
                   </a>
-                </div>
-                <div className="small-2 cell">
                   <a onClick={this.adjustImage}>
                     <img src="../img/ic_move_down.png" data-value="4"/>
+                  </a>
+                </div>
+                <div className="small-3 cell">
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_zoom_in.png" data-value="6"/>
+                  </a>
+                  <a onClick={this.adjustImage}>
+                    <img src="../img/ic_zoom_out.png" data-value="7"/>
                   </a>
                 </div>
                 <div className="small-2 cell">
