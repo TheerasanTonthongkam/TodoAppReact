@@ -573,7 +573,7 @@ var AddReasonForm = React.createClass({
                       }}/>
                 </div>
 
-                <label style={{ marginTop: '20px' }}>เหตุผลของฉันคือ</label>
+                <label style={{ marginTop: '20px' }}>เหตุผลของฉันคือ จำกัดไม่เกิน 20 ตัวอักษร</label>
                 <textarea id="textarea" required placeholder="พิมพ์ที่นี่" maxLength="20" ref="message" name="reasonPhrase" onChange={this.onTextChange}></textarea>
 
                 <div className="text-count">
@@ -626,6 +626,7 @@ var AddReasonForm = React.createClass({
   },
   componentDidMount: function () {
     window.addEventListener('scroll', this.handleScroll);
+    $('.auto-complete')[0].childNodes[1].childNodes[0].placeholder = "กิจกรรมของคุณคือ";
   }
 });
 
