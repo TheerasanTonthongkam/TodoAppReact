@@ -369,7 +369,7 @@ var AddReasonForm = React.createClass({
   }
 
   let renderEditTool = () => {
-    if (true) {
+    if (!this.isIOS()) {
       return (
         <div id="select-image" className="grid-x grid-margin-x">
           <div className="small-3 small-offset-1 cell">
