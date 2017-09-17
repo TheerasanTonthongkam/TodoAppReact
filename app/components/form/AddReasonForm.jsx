@@ -184,31 +184,6 @@ var AddReasonForm = React.createClass({
 
                   console.log(_that.state.file);
 
-                  // $.ajax({
-                  //   url: "http://104.198.185.202/api/campaign",
-                  //   data: data,
-                  //   type: 'POST',
-                  //   contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
-                  //   processData: false,
-                  //   success: function(res) {
-                  //     __that.setState({
-                  //       isLoading: false,
-                  //       isPost: true,
-                  //       imageUrl: res.imagePath
-                  //     });
-                  //   },
-                  //   error: function(XMLHttpRequest, textStatus, errorThrown) {
-                  //     console.log(XMLHttpRequest.responseText);
-                  //     console.log(textStatus);
-                  //     console.log(errorThrown);
-                  //     alert(XMLHttpRequest.responseText);
-                  //     alert(textStatus);
-                  //     alert(errorThrown);
-                  //     alert("unable to post");
-                  //   }
-                  // });
-
-
                   services.postCampaign(data).then(function(data) {
                     __that.setState({
                       isLoading: false,
@@ -420,6 +395,7 @@ var AddReasonForm = React.createClass({
       } else if (isLoading) {
         return (
           <div>
+            <Loading />
             <div className='live-wall-card big' style={{opacity: 0}}>
               <div className="text">
                   <div className="reason">{value}</div>
@@ -431,7 +407,7 @@ var AddReasonForm = React.createClass({
                 <img src="../img/WhayYourWhy-Logo.png"/>
               </div>
             </div>
-            <Loading/>
+
           </div>
         );
       } else {
