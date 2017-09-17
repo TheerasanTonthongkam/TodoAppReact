@@ -23,7 +23,6 @@ var Main = React.createClass({
         <Reward/>
         <LiveWall/>
         <Video/>
-        <WhatsYourWhy home={true}/>
         <Blog home={true}/>
         <Footer/>
         <Policy/>

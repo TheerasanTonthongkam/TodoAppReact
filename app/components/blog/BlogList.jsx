@@ -7,8 +7,6 @@ var BlogList = React.createClass({
   render: function() {
     return (
       <div>
-        <WhatsYourWhy />
-        <div className="red-line"></div>
         <Blog />
         <div className="red-line"></div>
         <h3 className="package">สนใจซื้อ แพ็คเกจ ดูแลสุขภาพรอบด้าน กรุณากรอกข้อมูล</h3>

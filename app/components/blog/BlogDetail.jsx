@@ -58,7 +58,6 @@ var BlogDetail = React.createClass({
               </div>
 
               <div className="red-line"></div>
-            <WhatsYourWhy home={true}/>
             <Blog home={true}/>
       </div>
     )
