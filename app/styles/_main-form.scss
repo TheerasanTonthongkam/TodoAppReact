@@ -273,11 +273,27 @@
 
 #preCanvas2 {
   zoom: 0.743;
+  -moz-transform: scale(0.5);
   position: relative;
   left: -120px;
   z-index: 1;
+
+  @-moz-document url-prefix() {
+    -moz-transform: scale(0.6);
+    left: -160px;
+    z-index: 1;
+    margin-top: -120px;
+    margin-bottom: -90px;
+    
+    @media screen and (max-width: $break-small) {
+      margin-top: -20px;
+      margin-bottom: 0px;
+    }
+  }
+
   @media screen and (max-width: $break-small) {
     zoom: 1;
+    -moz-transform: scale(1);
     left: 0px;
   }
 }
