@@ -59,8 +59,10 @@
       height: auto;
       margin: 15px auto;
 
+
       @media screen and (max-width: $break-small) {
         margin: 0 auto;
+
       }
     }
 
@@ -79,8 +81,10 @@
       }
       .img {
         height: 244px;
+        min-width: 220px;
         @media screen and (max-width: $break-small) {
           height: 122px;
+          min-width: 220px;
         }
 
         &:after {
@@ -150,6 +154,7 @@
     .img {
       background: rgba(255, 255, 255, 1);
       height: 122px;
+      min-width: 220px;
       overflow: hidden;
       &:before {
         content: '';
@@ -180,6 +185,7 @@
 
       @media screen and (max-width: $break-small) {
         height: 60px;
+        min-width: 110px;
       }
     }
 

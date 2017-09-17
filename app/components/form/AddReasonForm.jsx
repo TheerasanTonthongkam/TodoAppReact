@@ -368,6 +368,66 @@ var AddReasonForm = React.createClass({
     }
   }
 
+  let renderEditTool = () => {
+    if (!this.isIOS()) {
+      return (
+        <div id="select-image" className="grid-x grid-margin-x">
+          <div className="small-3 small-offset-1 cell">
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_move_left.png" data-value="1"/>
+            </a>
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_move_right.png" data-value="2"/>
+            </a>
+          </div>
+
+          <div className="small-3 cell">
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_move_up.png" data-value="3"/>
+            </a>
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_move_down.png" data-value="4"/>
+            </a>
+          </div>
+          <div className="small-3 cell">
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_zoom_in.png" data-value="6"/>
+            </a>
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_zoom_out.png" data-value="7"/>
+            </a>
+          </div>
+          <div className="small-2 cell">
+            <a onClick={this.adjustImage}>
+              <img src="../img/ic_rotate.png" data-value="5"/>
+            </a>
+          </div>
+
+          <div className="small-12 cell">
+            <br/>
+          </div>
+
+          <div className="small-4 cell">
+            <a className={img1} onClick={this.selectImage} ref="a1">
+              <img src="../img/preview_2.jpg" data-value="1"/>
+            </a>
+
+          </div>
+          <div className="small-4 cell">
+            <a className={img2} onClick={this.selectImage} ref="a2">
+              <img src="../img/preview_1.jpg" data-value="2"/>
+            </a>
+          </div>
+          <div className="small-4 cell">
+            <a className={img3} onClick={this.selectImage} ref="a3">
+              <img src="../img/preview_3.jpg" data-value="3"/>
+            </a>
+          </div>
+        </div>
+      );
+    }
+  }
+
     var renderForm = () => {
       if (isPost) {
         return (
@@ -453,59 +513,8 @@ var AddReasonForm = React.createClass({
                   />
               </div>
 
-              <div id="select-image" className="grid-x grid-margin-x">
-                <div className="small-3 small-offset-1 cell">
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_move_left.png" data-value="1"/>
-                  </a>
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_move_right.png" data-value="2"/>
-                  </a>
-                </div>
+              {renderEditTool()}
 
-                <div className="small-3 cell">
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_move_up.png" data-value="3"/>
-                  </a>
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_move_down.png" data-value="4"/>
-                  </a>
-                </div>
-                <div className="small-3 cell">
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_zoom_in.png" data-value="6"/>
-                  </a>
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_zoom_out.png" data-value="7"/>
-                  </a>
-                </div>
-                <div className="small-2 cell">
-                  <a onClick={this.adjustImage}>
-                    <img src="../img/ic_rotate.png" data-value="5"/>
-                  </a>
-                </div>
-
-                <div className="small-12 cell">
-                  <br/>
-                </div>
-
-                <div className="small-4 cell">
-                  <a className={img1} onClick={this.selectImage} ref="a1">
-                    <img src="../img/preview_2.jpg" data-value="1"/>
-                  </a>
-
-                </div>
-                <div className="small-4 cell">
-                  <a className={img2} onClick={this.selectImage} ref="a2">
-                    <img src="../img/preview_1.jpg" data-value="2"/>
-                  </a>
-                </div>
-                <div className="small-4 cell">
-                  <a className={img3} onClick={this.selectImage} ref="a3">
-                    <img src="../img/preview_3.jpg" data-value="3"/>
-                  </a>
-                </div>
-              </div>
             </div>
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">

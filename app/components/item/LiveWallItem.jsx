@@ -7,8 +7,7 @@ var LiveWallItem = React.createClass({
           backgroundImage: 'url(' + imagePath + ')',
           backgroundSize: 'cover',
           backgroundPosition: '50%',
-          marginLeft: '-10%',
-          minWidth: '220px'
+          marginLeft: '-10%'
       };
 
 
