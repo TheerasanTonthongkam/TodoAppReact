@@ -582,11 +582,7 @@ var AddReasonForm = React.createClass({
     console.log(document.body.scrollTop + " position " + this.state.openPoint);
 
     if (nodeCount == 2) {
-    //console.log($('.auto-complete').position().top - document.body.scrollTop + ($('.auto-complete').height() * 1.5));
-    var eTop = $('.auto-complete').position().top;
-
-
-    $("button[type='submit']")[0].innerHTML = eTop + " : " + $(window).scrollTop() + " : " + (eTop - $(window).scrollTop());
+     var eTop = $('.auto-complete').position().top;
      $('.auto-complete')[0].childNodes[1].childNodes[1].style.top = (eTop - $(window).scrollTop()) + 40 +'px';
     }
   },
