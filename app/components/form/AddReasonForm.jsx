@@ -359,8 +359,8 @@ var AddReasonForm = React.createClass({
     }
 
     let style = {
-        top: top,
-        left: left,
+        top: top+'px',
+        left: left+'px',
         transform: `rotate(${rotate}deg)`,
         width: `${zoom}%`
     };
