@@ -129,7 +129,8 @@ var AddReasonForm = React.createClass({
       top: defaultTop,
       left: 0,
       rotate: 0,
-      zoom: 100
+      zoom: 100,
+      openPoint: 0
     };
   },
   isIOS: function() {
@@ -598,13 +599,26 @@ var AddReasonForm = React.createClass({
     );
   },
   onAutoCompleteClick(e) {
-    $('.auto-complete')[0].childNodes[1].childNodes[1].style.left = '0px';
   },
   handleScroll: function(e) {
-    $('#textarea').click();
+
     var nodeCount = $('.auto-complete')[0].childNodes[1].childNodes.length;
+    console.log(document.body.scrollTop + " position " + this.state.openPoint);
     if (nodeCount == 2) {
-      $('.auto-complete')[0].childNodes[1].childNodes[1].style.left = '10000px';
+      if (this.state.openPoint === 0) {
+        this.setState({
+          openPoint: document.body.scrollTop
+        });
+      }
+      console.log($('.auto-complete')[0].childNodes[1].childNodes[1].style.top)
+      var oldPosition = $('.auto-complete')[0].childNodes[1].childNodes[1].style.top.replace('px', '');
+      console.log("old position  " + oldPosition);
+      var dif = oldPosition - (document.body.scrollTop - this.state.openPoint);
+     $('.auto-complete')[0].childNodes[1].childNodes[1].style.top = $('.auto-complete').position().top - document.body.scrollTop + ($('.auto-complete').height() * 1.5) +'px';
+    } else {
+      this.setState({
+        openPoint: 0
+      });
     }
   },
   componentWillUnmount: function() {
