@@ -32,7 +32,6 @@ var BlogDetail = React.createClass({
   },
   render: function() {
     var {data, isLoading, imagePath, id} = this.state;
-    console.log(id);
     var renderContent = () => {
       if (isLoading) {
         return (<Loading/>)
@@ -66,7 +65,6 @@ var BlogDetail = React.createClass({
   },
   componentDidMount: function() {
     window.scrollTo(0, 0);
-    console.log("did mount" + this.props.params.id);
     if (this.props.params.id > 0) {
       this.getBlogFromId(this.props.params.id);
     }

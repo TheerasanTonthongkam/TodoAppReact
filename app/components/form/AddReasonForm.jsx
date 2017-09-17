@@ -37,7 +37,6 @@ var AddReasonForm = React.createClass({
     var postId = this.getCookie('userId');
     // var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
     var url = this.state.imageUrl;
-    console.log(url);
 
     FB.ui(
        {
@@ -88,8 +87,6 @@ var AddReasonForm = React.createClass({
 
           ratio = preCanvas.width() / img.width();
 
-          console.log(ratio + " : " + this.state.width + " : " + this.state.height);
-
           this.setState({
                 ...this.state,
                 width: img.width() * ratio,
@@ -135,34 +132,81 @@ var AddReasonForm = React.createClass({
       zoom: 100
     };
   },
+  isIOS: function() {
+
+  if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    if (!!window.indexedDB) { return true }
+    if (!!window.SpeechSynthesisUtterance) { return true; }
+    if (!!window.webkitAudioContext) { return true; }
+    if (!!window.matchMedia) { return true; }
+    if (!!window.history && 'pushState' in window.history) { return true; }
+    return true;
+  }
+
+  if (navigator.userAgent.indexOf("Safari") > -1) {return true;}
+
+  return false;
+},
   generateCanvas: function() {
     let that = this;
         html2canvas($('#preCanvas'), {
             onrendered: function(canvas) {
               var _that = that;
               canvas.toBlob(function(blob) {
+                //location.href = canvas.toDataURL('image/png');
+                console.log("blob");
                   console.log(blob);
-                  var f = new File([blob], "filename.png");
-                  console.log(f);
+                  var f = new File([blob], "filename.png", {type: blob.type});
+                  if (that.isIOS()) {
+                    f = $('input[type=file]')[0].files[0];
+                  }
+
                   _that.setState({
                       imageToDownload: canvas.toDataURL('image/png'),
                       file: f
                   });
 
                   let data = new FormData();
-                  data.append('file', _that.state.file);
+
+                  data.append('file', f);
                   data.append('postId', _that.getCookie('userId'));
                   data.append('reasonCode', _that.state.value);
                   data.append('reasonPhrase', _that.state.reason);
 
                   var __that = _that;
-
                   __that.setState({
                     isLoading: true
                   })
 
                   var element = document.getElementById("main-form");
                   element.scrollIntoView();
+
+                  console.log(_that.state.file);
+
+                  // $.ajax({
+                  //   url: "http://104.198.185.202/api/campaign",
+                  //   data: data,
+                  //   type: 'POST',
+                  //   contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                  //   processData: false,
+                  //   success: function(res) {
+                  //     __that.setState({
+                  //       isLoading: false,
+                  //       isPost: true,
+                  //       imageUrl: res.imagePath
+                  //     });
+                  //   },
+                  //   error: function(XMLHttpRequest, textStatus, errorThrown) {
+                  //     console.log(XMLHttpRequest.responseText);
+                  //     console.log(textStatus);
+                  //     console.log(errorThrown);
+                  //     alert(XMLHttpRequest.responseText);
+                  //     alert(textStatus);
+                  //     alert(errorThrown);
+                  //     alert("unable to post");
+                  //   }
+                  // });
+
 
                   services.postCampaign(data).then(function(data) {
                     __that.setState({
@@ -285,7 +329,6 @@ var AddReasonForm = React.createClass({
       var max = valueConvert.length;
       var tmp = valueConvert;
       for (var i = max; i > 0 ; i --) {
-        console.log(valueConvert[i] + " " + i + " " + specialLetter.indexOf(valueConvert[i]));
         if (specialLetter.indexOf(valueConvert[i]) >= 0) {
             var c = valueConvert[i];
             tmp = tmp.substring(0, i) + tmp.substring(i+1, i+2) + c + tmp.substring(i+2, max);
@@ -298,7 +341,6 @@ var AddReasonForm = React.createClass({
       tmp = reasonConvert;
       var max = reasonConvert.length;
       for (var i = max; i > 0 ; i --) {
-        console.log(reasonConvert[i] + " " + i + " " + specialLetter.indexOf(reasonConvert[i]));
         if (specialLetter.indexOf(reasonConvert[i]) >= 0) {
             var c = reasonConvert[i];
             tmp = tmp.substring(0, i) + tmp.substring(i+1, i+2) + c + tmp.substring(i+2, max);
@@ -309,8 +351,6 @@ var AddReasonForm = React.createClass({
       reasonConvert = reasonConvert.replace('.', ' ');
 
     let canvasHeight = $('#preCanvas').height();
-
-    console.log(canvasHeight, top);
 
     var defaultTop = 50;
 
@@ -339,6 +379,18 @@ var AddReasonForm = React.createClass({
                 return <a href={imageToDownload} download={"image_"} className="button expanded large">บันทึกรูป</a>
             }
         };
+
+  let renderInputFile = () => {
+    if (this.isIOS()) {
+      return (
+        <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} required/>
+      )
+    } else {
+      return (
+        <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} />
+      )
+    }
+  }
 
     var renderForm = () => {
       if (isPost) {
@@ -483,6 +535,7 @@ var AddReasonForm = React.createClass({
                   <div className="auto-complete">
                   <input type="text" placeholder="เลือกกิจกรรมของคุณ" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
+                      onClick={this.onAutoCompleteClick}
                       id="auto-complete"
                       items={[
                         { id: '1', label: 'ออกกำลังกาย' },
@@ -527,7 +580,7 @@ var AddReasonForm = React.createClass({
                 </div>
 
                 <a className="button-line gray file expanded">อัปโหลดรูป
-                  <input type="file" className="file" accept="image/*" name="file" onChange={this.onImageChange} />
+                  {renderInputFile()}
                 </a>
 
                 <button type="submit" className="button-line expanded" >SUBMIT</button>
@@ -544,13 +597,15 @@ var AddReasonForm = React.createClass({
         </div>
     );
   },
+  onAutoCompleteClick(e) {
+    $('.auto-complete')[0].childNodes[1].childNodes[1].style.left = '0px';
+  },
   handleScroll: function(e) {
     $('#textarea').click();
     var nodeCount = $('.auto-complete')[0].childNodes[1].childNodes.length;
     if (nodeCount == 2) {
       $('.auto-complete')[0].childNodes[1].childNodes[1].style.left = '10000px';
     }
-    console.log("scroll " + $('.auto-complete')[0].childNodes[1].childNodes.length);
   },
   componentWillUnmount: function() {
     window.removeEventListener('scroll', this.handleScroll);

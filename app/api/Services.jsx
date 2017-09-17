@@ -85,7 +85,6 @@ module.exports = {
     return axios.post(requestUrl, formData, config).then(function(res) {
       return res.data
     }, function (err) {
-      alert(err.message);
       console.log(err);
       throw new Error('Unable to Post ' + err);
     });

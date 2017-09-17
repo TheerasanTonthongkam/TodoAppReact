@@ -4,7 +4,6 @@ var {Link, IndexLink} = require('react-router');
 var TopBar = React.createClass({
   clickLogout: function(e) {
     e.preventDefault();
-    alert("out");
   },
   getInitialState: function() {
     var that = this;

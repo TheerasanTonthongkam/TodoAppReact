@@ -8,6 +8,7 @@ var LiveWallPage = require('LiveWallPage');
 var BlogList = require('BlogList');
 var BlogDetail = require('BlogDetail');
 var MainBlog = require('MainBlog');
+var JQupload = require('JQupload');
 
 // Load foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
