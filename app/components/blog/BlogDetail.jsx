@@ -51,6 +51,13 @@ var BlogDetail = React.createClass({
           <h2 style={{color: '#000'}}>{data.title}</h2>
             {renderContent()}
             <div className="red-line"></div>
+
+              <h3 className="package">สนใจซื้อ แพ็คเกจ ดูแลสุขภาพรอบด้าน กรุณากรอกข้อมูล</h3>
+              <div className="frame-from">
+                <iframe src="https://direct.aia.co.th/btoc/Product/LeadForm/iframe.jsp?productID=29" frameBorder="0"></iframe>
+              </div>
+
+              <div className="red-line"></div>
             <WhatsYourWhy home={true}/>
             <Blog home={true}/>
       </div>

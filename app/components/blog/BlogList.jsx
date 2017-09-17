@@ -10,6 +10,11 @@ var BlogList = React.createClass({
         <WhatsYourWhy />
         <div className="red-line"></div>
         <Blog />
+        <div className="red-line"></div>
+        <h3 className="package">สนใจซื้อ แพ็คเกจ ดูแลสุขภาพรอบด้าน กรุณากรอกข้อมูล</h3>
+        <div className="frame-from">
+          <iframe src="https://direct.aia.co.th/btoc/Product/LeadForm/iframe.jsp?productID=29" frameBorder="0"></iframe>
+        </div>
         <br />
         <br />
       </div>
