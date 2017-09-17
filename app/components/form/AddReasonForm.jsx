@@ -143,7 +143,7 @@ var AddReasonForm = React.createClass({
     return true;
   }
 
-  if (navigator.userAgent.indexOf("Safari") > -1) {return true;}
+  if (navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") < 0) {return true;}
 
   return false;
 },
