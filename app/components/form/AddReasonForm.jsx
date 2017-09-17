@@ -510,7 +510,7 @@ var AddReasonForm = React.createClass({
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
                   <div className="auto-complete">
-                  <input type="text" placeholder="เลือกกิจกรรมของคุณ" value={this.state.value} name="reasonCode" required/>
+                    <input type="text" placeholder="เลือกกิจกรรมของคุณ" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
                       onClick={this.onAutoCompleteClick}
                       id="auto-complete"
@@ -580,21 +580,14 @@ var AddReasonForm = React.createClass({
 
     var nodeCount = $('.auto-complete')[0].childNodes[1].childNodes.length;
     console.log(document.body.scrollTop + " position " + this.state.openPoint);
+
     if (nodeCount == 2) {
-      if (this.state.openPoint === 0) {
-        this.setState({
-          openPoint: document.body.scrollTop
-        });
-      }
-      console.log($('.auto-complete')[0].childNodes[1].childNodes[1].style.top)
-      var oldPosition = $('.auto-complete')[0].childNodes[1].childNodes[1].style.top.replace('px', '');
-      console.log("old position  " + oldPosition);
-      var dif = oldPosition - (document.body.scrollTop - this.state.openPoint);
-     $('.auto-complete')[0].childNodes[1].childNodes[1].style.top = $('.auto-complete').position().top - document.body.scrollTop + ($('.auto-complete').height() * 1.5) +'px';
-    } else {
-      this.setState({
-        openPoint: 0
-      });
+    //console.log($('.auto-complete').position().top - document.body.scrollTop + ($('.auto-complete').height() * 1.5));
+    var eTop = $('.auto-complete').position().top;
+
+
+    $("button[type='submit']")[0].innerHTML = eTop + " : " + $(window).scrollTop() + " : " + (eTop - $(window).scrollTop());
+     $('.auto-complete')[0].childNodes[1].childNodes[1].style.top = (eTop - $(window).scrollTop()) + 40 +'px';
     }
   },
   componentWillUnmount: function() {

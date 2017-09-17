@@ -15,9 +15,9 @@ var Reward = React.createClass({
     }
   },
   getInitialState: function() {
-  return {
-    openHowTo: false
-  };
+    return {
+      openHowTo: false
+    };
   },
   render: function() {
 
@@ -34,7 +34,7 @@ var Reward = React.createClass({
         {renderHowTo()}
         <div id="reward">
             <h2>ของรางวัล</h2>
-            <p>800 รางวัล รวมมูลค่ากว่า <strong>500,000</strong> บาท</p>
+            <p>รวมกว่า 800 รางวัล รวมมูลค่ากว่า <strong>500,000</strong> บาท</p>
               <div className="grid-x">
                 <div className="medium-12 large-6 columns">
                   <div className="reward-card big">
@@ -83,7 +83,7 @@ var Reward = React.createClass({
                 </div>
               </div>
               <br/>
-              
+
         </div>
 
         <a onClick={this.onClickHowTo} className="button-line">เงื่อนไขและกติกาการร่วมสนุก</a>
