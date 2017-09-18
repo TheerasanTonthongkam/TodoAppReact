@@ -59,11 +59,11 @@ var RegisterForm = React.createClass({
               <div className="grid-x grid-margin-x">
                 <div className="small-6 cell">
                   <label>เบอร์โทรศัพท์มือถือ</label>
-                  <input type="text" ref="phone" placeholder="0XXXXXXXXX" pattern="^\d{10}$" required/>
+                  <input type="text" name="phone" maxLength="10" ref="phone" placeholder="0XXXXXXXXX" pattern="^\d{10}$" required/>
                 </div>
                 <div className="small-6 cell">
                   <label>อีเมล</label>
-                  <input type="email" ref="email" required/>
+                  <input type="email" ref="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
                 </div>
               </div>
 
@@ -85,6 +85,20 @@ var RegisterForm = React.createClass({
             </form>
         </div>
     );
+  },
+  componentDidMount: function(){
+      $('input[name=phone]').keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+      });
   }
 });
 
