@@ -37,8 +37,8 @@ var AddReasonForm = React.createClass({
     e.preventDefault();
     var userId = this.getCookie('userId');
     // var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
-    //var url = this.state.imageUrl;
-    var url = "http://campaigns.aia.co.th/whatsyourwhy/share.php?id=" + this.state.postId;
+    // var url = this.state.imageUrl;
+    var url = "http://campaigns.aia.co.th/whatsyourwhy/share.php?id=" + this.state.postId + "&ios=" + this.isIOS();
 
     FB.ui(
        {
