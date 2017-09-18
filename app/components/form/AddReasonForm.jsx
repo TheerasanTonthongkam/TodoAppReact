@@ -476,7 +476,7 @@ var AddReasonForm = React.createClass({
         );
       } else {
         return (
-          <div className="grid-x grid-margin-x">
+          <div className="grid-x grid-margin-x" style={{position: 'relative'}}>
 
             <div id="preCanvas">
               <img src="../img/frame.png" className="frame">
@@ -522,10 +522,9 @@ var AddReasonForm = React.createClass({
             </div>
             <div className="small-12 large-5  cell">
               <form id="campaignForm" onSubmit={this.onFormSubmit} encType="multipart/form-data">
-                  <div className="auto-complete">
+                  <div className="auto-complete" style={{position: 'relative', zIndex: 1}}>
                     <input type="text" placeholder="เลือกกิจกรรมของคุณ" value={this.state.value} name="reasonCode" required/>
                     <AutoComplete
-                      onClick={this.onAutoCompleteClick}
                       id="auto-complete"
                       items={[
                         { id: '1', label: 'ออกกำลังกาย' },
@@ -554,11 +553,11 @@ var AddReasonForm = React.createClass({
                       }
                       value={this.state.value}
                       onChange={e => this.setState({ value: e.target.value })}
-                      onSelect={value => this.setState({ value })}
+                      onSelect={value => this.setState({value })}
                       wrapperStyle={{
                         display: 'block',
                         width: '100%',
-                        position: 'absolute'
+                        position: 'relative !important'
                       }}/>
                 </div>
 
@@ -587,16 +586,14 @@ var AddReasonForm = React.createClass({
         </div>
     );
   },
-  onAutoCompleteClick(e) {
-  },
   handleScroll: function(e) {
 
     var nodeCount = $('.auto-complete')[0].childNodes[1].childNodes.length;
-    console.log(document.body.scrollTop + " position " + this.state.openPoint);
-
     if (nodeCount == 2) {
      var eTop = $('.auto-complete').position().top;
-     $('.auto-complete')[0].childNodes[1].childNodes[1].style.top = (eTop - $(window).scrollTop()) + 40 +'px';
+     var parent = $('.auto-complete').parent().parent().parent().position().top;
+     console.log(((eTop + parent) - $(window).scrollTop()) + 40 );
+     $('.auto-complete')[0].childNodes[1].childNodes[1].style.top = ((eTop + parent) - $(window).scrollTop()) + 60 +'px';
     }
   },
   componentWillUnmount: function() {

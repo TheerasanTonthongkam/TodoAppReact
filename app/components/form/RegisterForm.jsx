@@ -51,10 +51,10 @@ var RegisterForm = React.createClass({
             <form onSubmit={this.onFormSubmit}>
 
               <label>ชื่อ</label>
-              <input type="text" ref="firstName" required/>
+              <input type="text" placeholder="เฉพาะตัวอักษร" ref="firstName" pattern="[A-Za-zก-์]{1,40}" required/>
 
               <label>สกุล</label>
-              <input type="text" ref="lastName" required/>
+              <input type="text" placeholder="เฉพาะตัวอักษร" ref="lastName" pattern="[A-Za-zก-์]{1,40}" required/>
 
               <div className="grid-x grid-margin-x">
                 <div className="small-6 cell">
