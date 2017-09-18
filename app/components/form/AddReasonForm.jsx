@@ -29,14 +29,16 @@ var AddReasonForm = React.createClass({
       top: defaultTop,
       left: 0,
       rotate: 0,
-      zoom: 100
+      zoom: 100,
+      postId: 0
     });
   },
   onClickShare: function(e) {
     e.preventDefault();
-    var postId = this.getCookie('userId');
+    var userId = this.getCookie('userId');
     // var url = window.location.href.replace(window.location.hash, `#/livewall?postId=${postId}`);
-    var url = this.state.imageUrl;
+    //var url = this.state.imageUrl;
+    var url = "http://campaigns.aia.co.th/whatsyourwhy/share.php?id=" + this.state.postId;
 
     FB.ui(
        {
@@ -130,7 +132,8 @@ var AddReasonForm = React.createClass({
       left: 0,
       rotate: 0,
       zoom: 100,
-      openPoint: 0
+      openPoint: 0,
+      postId: 0
     };
   },
   isIOS: function() {
@@ -188,7 +191,8 @@ var AddReasonForm = React.createClass({
                     __that.setState({
                       isLoading: false,
                       isPost: true,
-                      imageUrl: data.imagePath
+                      imageUrl: data.imagePath,
+                      postId: data.id
                     })
 
                     var element = document.getElementById("thank");
